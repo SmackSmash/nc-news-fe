@@ -7,9 +7,13 @@
     width: 2.75rem;
     height: 2.75rem;
   }
-  span {
+  > span {
     font-size: 2.5rem;
     font-weight: 300;
+    background-image: linear-gradient(45deg, rgba(166, 227, 161, 1) 0%, rgba(137, 180, 250, 1) 100%);
+    background-size: 100%;
+    background-clip: text;
+    color: transparent;
 
     .bold {
       font-weight: 700;

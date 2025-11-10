@@ -4,8 +4,6 @@ import './ArticleCard.css';
 const ArticleCard = ({ article: { title, author, created_at, votes, article_img_url, comment_count } }) => {
   const date = new Date(Date.parse(created_at));
 
-  console.log(date);
-
   return (
     <article className='articleCard'>
       <div className='articleCardVoter'></div>
