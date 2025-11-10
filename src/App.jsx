@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className='container'>
         <Routes>
           <Route path='/' element={<ArticleList />} />
         </Routes>

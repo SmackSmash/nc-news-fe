@@ -1,5 +1,7 @@
+import './ArticleList.css';
+
 const ArticleList = () => {
-  return <h1>ArticleList works!</h1>;
+  return <section id='articleList'>ArticleList works!</section>;
 };
 
 export default ArticleList;

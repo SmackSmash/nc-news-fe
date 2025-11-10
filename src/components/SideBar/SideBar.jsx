@@ -1,5 +1,7 @@
+import './SideBar.css';
+
 const SideBar = () => {
-  return <h1>SideBar works!</h1>;
+  return <aside id='sideBar'>SideBar works!</aside>;
 };
 
 export default SideBar;
