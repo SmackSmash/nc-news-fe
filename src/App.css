@@ -1,6 +1,7 @@
 main {
   display: flex;
   gap: 1rem;
+  align-items: flex-start;
 }
 .container {
   min-width: 1200px;

@@ -1,0 +1,5 @@
+#articleCard {
+  background-color: var(--ctp-mocha-crust);
+  border-radius: 1rem;
+  padding: 1rem;
+}
