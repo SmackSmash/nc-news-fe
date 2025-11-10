@@ -1,5 +1,32 @@
-#articleCard {
+.articleCard {
   background-color: var(--ctp-mocha-crust);
   border-radius: 1rem;
-  padding: 1rem;
+  display: flex;
+  overflow: hidden;
+
+  .articleCardVoter {
+    min-width: 50px;
+    background-color: var(--ctp-mocha-base);
+  }
+  .articleCardContent {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    gap: 1rem;
+
+    .articleImgContainer {
+      min-width: 150px;
+      height: 100px;
+      border-radius: 1rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h2 {
+      display: inline;
+    }
+  }
 }

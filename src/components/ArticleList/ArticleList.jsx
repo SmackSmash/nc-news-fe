@@ -18,7 +18,7 @@ const ArticleList = () => {
   return (
     <section id='articleList'>
       {articles.map(article => (
-        <ArticleCard article={article} />
+        <ArticleCard article={article} key={article.article_id} />
       ))}
     </section>
   );
