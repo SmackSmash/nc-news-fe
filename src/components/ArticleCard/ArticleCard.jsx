@@ -1,7 +1,8 @@
+import { Link } from 'react-router';
 import PillLink from '../PillLink/PillLink';
 import './ArticleCard.css';
 
-const ArticleCard = ({ article: { title, author, created_at, votes, article_img_url, comment_count } }) => {
+const ArticleCard = ({ article: { article_id, title, author, created_at, votes, article_img_url, comment_count } }) => {
   const date = new Date(Date.parse(created_at));
 
   return (
@@ -12,7 +13,7 @@ const ArticleCard = ({ article: { title, author, created_at, votes, article_img_
           <img src={article_img_url} alt={title} />
         </div>
         <div className='articleContentContainer'>
-          <h2>{title}</h2>
+          <Link to={`/article/${article_id}`}>{title}</Link>
           <span className='date'>
             {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
           </span>

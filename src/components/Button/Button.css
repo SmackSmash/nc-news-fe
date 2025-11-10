@@ -1,6 +1,7 @@
 .button {
   display: block;
   width: 100%;
+  font-size: 1.25rem;
   color: var(--ctp-mocha-text);
   background: #11111b;
   background: linear-gradient(0deg, rgba(17, 17, 27, 1) 0%, rgba(24, 24, 37, 1) 100%);

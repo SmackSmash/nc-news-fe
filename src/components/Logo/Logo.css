@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
 
   svg {
     width: 2.75rem;
@@ -17,6 +18,7 @@
 
     .bold {
       font-weight: 700;
+      text-shadow: 0 0 10px var(--ctp-mocha-blue);
     }
   }
 }

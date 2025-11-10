@@ -1,8 +1,9 @@
+import { Link } from 'react-router';
 import './Logo.css';
 
 const Logo = () => {
   return (
-    <a id='logo'>
+    <Link to='/' id='logo'>
       <svg version='1.0' id='Layer_1' width='800px' height='800px' viewBox='0 0 64 64' enableBackground='new 0 0 64 64'>
         <defs>
           <linearGradient id='linear' x1='0%' y1='0%' x2='100%' y2='0%'>
@@ -22,7 +23,7 @@ const Logo = () => {
       <span>
         <span className='bold'>NC</span> News
       </span>
-    </a>
+    </Link>
   );
 };
 
