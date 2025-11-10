@@ -1,7 +1,11 @@
 import './Footer.css';
 
 const Footer = () => {
-  return <h1>Footer Works!</h1>;
+  return (
+    <footer id='footer' className='container'>
+      Copyright © 2025 NC News Inc
+    </footer>
+  );
 };
 
 export default Footer;
