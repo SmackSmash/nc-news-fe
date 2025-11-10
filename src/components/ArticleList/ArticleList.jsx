@@ -11,7 +11,9 @@ const ArticleList = () => {
         const response = await fetch('https://northcoders-news-be-f4oe.onrender.com/api/articles');
         const data = await response.json();
         setArticles(data.articles);
-      } catch (error) {}
+      } catch (error) {
+        console.error(error);
+      }
     })();
   }, []);
 
