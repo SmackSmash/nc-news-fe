@@ -15,9 +15,9 @@
     gap: 1rem;
 
     .articleImgContainer {
-      min-width: 150px;
+      min-width: 170px;
       height: 100px;
-      border-radius: 1rem;
+      border-radius: 0.75rem;
       overflow: hidden;
       img {
         width: 100%;
@@ -26,6 +26,10 @@
       }
     }
     .articleContentContainer {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding-left: 0.5rem;
       h2 {
         font-weight: 700;
         font-size: 1.25rem;
@@ -34,6 +38,12 @@
       }
       .date {
         color: var(--ctp-mocha-surface2);
+      }
+
+      .articlePillContainer {
+        margin-top: auto;
+        height: 25px;
+        display: flex;
       }
     }
   }
