@@ -1,0 +1,19 @@
+.pill {
+  cursor: pointer;
+  background-color: var(--ctp-mocha-rosewater);
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  &.yellow {
+    background-color: var(--ctp-mocha-yellow);
+  }
+  &.blue {
+    background-color: var(--ctp-mocha-blue);
+  }
+  &.green {
+    background-color: var(--ctp-mocha-green);
+  }
+  &.margin {
+    margin-left: auto;
+  }
+}
