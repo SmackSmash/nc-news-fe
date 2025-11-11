@@ -1,27 +1,9 @@
-import { useState, useEffect } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
+import useQuery from '../../hooks/useQuery';
 import './ArticleList.css';
 
 const ArticleList = () => {
-  const [articles, setArticles] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch('https://northcoders-news-be-f4oe.onrender.com/api/articles');
-        const data = await response.json();
-        setIsLoading(false);
-        setArticles(data.articles);
-      } catch (error) {
-        setIsLoading(false);
-        setError(error);
-        console.error(error.message);
-      }
-    })();
-  }, []);
+  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/articles');
 
   if (isLoading) {
     return <section id='articleList'>Loading...</section>;
@@ -31,13 +13,15 @@ const ArticleList = () => {
     return <section id='articleList'>{error.message}</section>;
   }
 
-  return (
-    <section id='articleList'>
-      {articles.map(article => (
-        <ArticleCard article={article} key={article.article_id} />
-      ))}
-    </section>
-  );
+  if (data) {
+    return (
+      <section id='articleList'>
+        {data.articles.map(article => (
+          <ArticleCard article={article} key={article.article_id} />
+        ))}
+      </section>
+    );
+  }
 };
 
 export default ArticleList;
