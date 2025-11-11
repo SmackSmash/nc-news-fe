@@ -1,14 +1,40 @@
+@keyframes satellite {
+  0% {
+    left: -5px;
+    top: -5px;
+    z-index: -1;
+  }
+  50% {
+    left: 35px;
+    top: 35px;
+    z-index: -1;
+  }
+  100% {
+    left: -5px;
+    top: -5px;
+    z-index: 10;
+  }
+}
 #logo {
   display: flex;
   align-items: center;
   gap: 1rem;
   text-decoration: none;
+  position: relative;
+  z-index: 0;
 
-  svg {
+  #globe {
     width: 2.75rem;
     height: 2.75rem;
   }
   #satellite {
+    width: 10px;
+    height: 10px;
+    color: var(--ctp-mocha-crust);
+    position: absolute;
+    animation-name: satellite;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
   }
   > span {
     font-size: 2.5rem;

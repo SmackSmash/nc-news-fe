@@ -1,10 +1,11 @@
 import { Link } from 'react-router';
+import { MdSatelliteAlt } from 'react-icons/md';
 import './Logo.css';
 
 const Logo = () => {
   return (
     <Link to='/' id='logo'>
-      <svg version='1.0' id='Layer_1' width='800px' height='800px' viewBox='0 0 64 64' enableBackground='new 0 0 64 64'>
+      <svg version='1.0' width='800px' height='800px' viewBox='0 0 64 64' enableBackground='new 0 0 64 64' id='globe'>
         <defs>
           <linearGradient id='linear' x1='0%' y1='0%' x2='100%' y2='0%'>
             <stop offset='0%' stopColor='#74c7ec' />
@@ -20,6 +21,7 @@ const Logo = () => {
 	c2.969,3.77,2.277,8.066,0,12.293c-1.676,3.055-3.836,4.137-6.723,5.742C21.316,55.438,13.34,49.555,9.867,41.289z'
         />
       </svg>
+      <MdSatelliteAlt id='satellite' />
       <span>
         <span className='bold'>NC</span> News
       </span>
