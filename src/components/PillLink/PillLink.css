@@ -24,6 +24,9 @@
   &.green {
     background-color: var(--ctp-mocha-green);
   }
+  &.purple {
+    background-color: var(--ctp-mocha-mauve);
+  }
   &.margin {
     margin-left: auto;
   }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
@@ -14,8 +15,12 @@ const SideBar = () => {
   if (data) {
     return (
       <aside id='sideBar'>
+        <h2>Topics</h2>
         {data.topics.map(topic => (
-          <div key={topic.slug}>{topic.slug}</div>
+          <Link to={`/topics/${topic.slug}`} key={topic.slug} className='sideBarLink'>
+            <span>{topic.slug}</span>
+            <p>{topic.description}</p>
+          </Link>
         ))}
         <Button>+ Add Topic</Button>
       </aside>

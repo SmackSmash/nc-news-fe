@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import classNames from 'classnames';
 import './PillLink.css';
 
-const PillLink = ({ href, color, margin, children }) => {
+const PillLink = ({ to, color, margin, children }) => {
   const btnClass = classNames({
     pill: true,
     [color]: color,
@@ -10,7 +10,7 @@ const PillLink = ({ href, color, margin, children }) => {
   });
 
   return (
-    <Link to={href} className={btnClass}>
+    <Link to={to} className={btnClass}>
       {children}
     </Link>
   );

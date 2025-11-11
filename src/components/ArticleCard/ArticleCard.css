@@ -45,6 +45,7 @@
       }
       .date {
         color: var(--ctp-mocha-surface2);
+        font-size: 0.875rem;
       }
 
       .articlePillContainer {

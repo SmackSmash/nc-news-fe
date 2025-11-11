@@ -4,6 +4,7 @@ import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import CommentList from '../CommentList/CommentList';
 import Button from '../Button/Button';
+import PillLink from '../PillLink/PillLink';
 import './Article.css';
 
 const Article = () => {
@@ -21,11 +22,17 @@ const Article = () => {
     return (
       <div id='articleContainer'>
         <section id='article'>
+          <PillLink to={`/topics/${topic}`} color='purple'>
+            {topic}
+          </PillLink>
           <h1>{title}</h1>
           <div id='articleImgContainer'>
             <img src={article_img_url} alt={title} />
           </div>
           <p>{body}</p>
+          <PillLink to='' color='yellow'>
+            {author}
+          </PillLink>
         </section>
         <section id='addComment'>
           <Button>+ Add Comment</Button>

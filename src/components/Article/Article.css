@@ -3,7 +3,7 @@
   flex-direction: column;
   #article {
     flex-grow: 1;
-    background-color: var(--ctp-mocha-surface0);
+    background-color: var(--ctp-mocha-crust);
     border-radius: 1rem;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -12,11 +12,10 @@
       font-size: 2rem;
       line-height: 2.5rem;
       width: 100%;
-      border-bottom: solid 2px var(---ctp-mocha-mantle);
     }
     #articleImgContainer {
       width: 100%;
-      background-color: var(--ctp-mocha-base);
+      background-color: var(--ctp-mocha-mantle);
       border-radius: 0.4rem;
       display: flex;
       justify-content: center;

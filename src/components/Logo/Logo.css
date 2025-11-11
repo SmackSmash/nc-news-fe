@@ -1,18 +1,37 @@
 @keyframes satellite {
   0% {
+    left: 35px;
+    top: 35px;
+    z-index: 1;
+    transform: scale(1);
+    color: var(--ctp-mocha-text);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  49% {
+    z-index: 1;
+  }
+  50% {
     left: -5px;
     top: -5px;
     z-index: -1;
+    transform: scale(1);
+    color: var(--ctp-mocha-text);
   }
-  50% {
-    left: 35px;
-    top: 35px;
+  75% {
+    transform: scale(0.8);
+    color: var(--ctp-mocha-base);
+  }
+  99% {
     z-index: -1;
   }
   100% {
-    left: -5px;
-    top: -5px;
+    left: 35px;
+    top: 35px;
     z-index: 1;
+    transform: scale(1);
+    color: var(--ctp-mocha-text);
   }
 }
 #logo {
@@ -21,19 +40,18 @@
   gap: 1rem;
   text-decoration: none;
   position: relative;
-  z-index: 0;
 
   #globe {
     width: 2.75rem;
     height: 2.75rem;
   }
   #satellite {
-    width: 10px;
-    height: 10px;
-    color: var(--ctp-mocha-crust);
+    width: 12px;
+    height: 12px;
+    filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.2));
     position: absolute;
     animation-name: satellite;
-    animation-duration: 20s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }

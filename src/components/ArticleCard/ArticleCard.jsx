@@ -17,11 +17,15 @@ const ArticleCard = ({ article: { article_id, title, author, created_at, votes, 
             {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
           </span>
           <div className='articlePillContainer'>
-            <PillLink color='yellow'>{author}</PillLink>
-            <PillLink color='blue' margin>
+            <PillLink to='' color='yellow'>
+              {author}
+            </PillLink>
+            <PillLink to='' color='blue' margin>
               {comment_count} Comments
             </PillLink>
-            <PillLink color='green'>{votes} Votes</PillLink>
+            <PillLink to='' color='green'>
+              {votes} Votes
+            </PillLink>
           </div>
         </div>
       </div>
