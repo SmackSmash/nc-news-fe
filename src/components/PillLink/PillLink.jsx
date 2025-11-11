@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import classNames from 'classnames';
 import './PillLink.css';
 
@@ -9,9 +10,9 @@ const PillLink = ({ href, color, margin, children }) => {
   });
 
   return (
-    <a href={href} className={btnClass}>
+    <Link to={href} className={btnClass}>
       {children}
-    </a>
+    </Link>
   );
 };
 

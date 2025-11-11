@@ -3,5 +3,32 @@
   flex-direction: column;
   #article {
     flex-grow: 1;
+    background-color: var(--ctp-mocha-surface0);
+    border-radius: 1rem;
+    padding: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      width: 100%;
+      border-bottom: solid 2px var(---ctp-mocha-mantle);
+    }
+    #articleImgContainer {
+      width: 100%;
+      background-color: var(--ctp-mocha-base);
+      border-radius: 0.4rem;
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+      overflow: hidden;
+
+      img {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+    }
+    p {
+      line-height: 1.5rem;
+      margin-top: 1rem;
+    }
   }
 }

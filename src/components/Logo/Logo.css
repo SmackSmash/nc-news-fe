@@ -12,7 +12,7 @@
   100% {
     left: -5px;
     top: -5px;
-    z-index: 10;
+    z-index: 1;
   }
 }
 #logo {
@@ -35,6 +35,7 @@
     animation-name: satellite;
     animation-duration: 20s;
     animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
   }
   > span {
     font-size: 2.5rem;

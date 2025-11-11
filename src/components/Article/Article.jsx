@@ -10,16 +10,21 @@ const Article = () => {
 
   const [error, isLoading, data] = useQuery(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`);
 
-  if (isLoading) return <Loading>Loading topics...</Loading>;
+  if (isLoading) return <Loading>Loading article...</Loading>;
 
   if (error) return <Error>{error}</Error>;
 
   if (data) {
+    const { article_img_url, author, body, comment_count, created_at, title, topic, votes } = data.article;
+
     return (
       <div id='articleContainer'>
         <section id='article'>
-          <h1>{data.article.title}</h1>
-          <p>{data.article.body}</p>
+          <h1>{title}</h1>
+          <div id='articleImgContainer'>
+            <img src={article_img_url} alt={title} />
+          </div>
+          <p>{body}</p>
         </section>
         <CommentList articleId={articleId} />
       </div>

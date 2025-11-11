@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useQuery = queryString => {
+const useQuery = (queryString, method = 'GET') => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -9,7 +9,7 @@ const useQuery = queryString => {
     (async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(queryString);
+        const response = await fetch(queryString, { method });
         const json = await response.json();
         setIsLoading(false);
         setData(json);
@@ -18,7 +18,7 @@ const useQuery = queryString => {
         setError(error.message);
       }
     })();
-  }, [queryString]);
+  }, [queryString, method]);
 
   return [error, isLoading, data];
 };

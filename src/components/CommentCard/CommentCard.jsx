@@ -1,13 +1,33 @@
+import useQuery from '../../hooks/useQuery';
+import Error from '../Error/Error';
+import Loading from '../Loading/Loading';
+import PillLink from '../PillLink/PillLink';
 import './CommentCard.css';
 
 const CommentCard = ({ comment }) => {
-  console.log(comment);
-  return (
-    <article>
-      <h1>{comment.author}</h1>
-      <p>{comment.body}</p>
-    </article>
-  );
+  const { article_id, author, body, comment_id, created_at, votes } = comment;
+
+  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
+
+  if (isLoading) return <Loading>Loading comment...</Loading>;
+
+  if (error) return <Error>{error}</Error>;
+
+  if (data) {
+    const user = data.users.find(user => user.username === author);
+
+    return (
+      <article className='comment'>
+        <div className='avatar'>
+          <img src={user.avatar_url} alt={author} />
+        </div>
+        <p>{body}</p>
+        <PillLink to='' color='yellow'>
+          {author}
+        </PillLink>
+      </article>
+    );
+  }
 };
 
 export default CommentCard;
