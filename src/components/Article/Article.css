@@ -6,6 +6,7 @@
     background-color: var(--ctp-mocha-surface0);
     border-radius: 1rem;
     padding: 2rem;
+    margin-bottom: 2rem;
 
     h1 {
       font-size: 2rem;

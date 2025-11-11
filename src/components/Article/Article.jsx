@@ -3,6 +3,7 @@ import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import CommentList from '../CommentList/CommentList';
+import Button from '../Button/Button';
 import './Article.css';
 
 const Article = () => {
@@ -26,6 +27,7 @@ const Article = () => {
           </div>
           <p>{body}</p>
         </section>
+        <Button>+ Add Comment</Button>
         <CommentList articleId={articleId} />
       </div>
     );

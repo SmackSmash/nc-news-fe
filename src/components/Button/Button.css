@@ -1,6 +1,6 @@
 .button {
   display: block;
-  width: 100%;
+  width: calc(100% - 4px);
   font-size: 1rem;
   font-weight: 500;
   color: var(--ctp-mocha-text);
