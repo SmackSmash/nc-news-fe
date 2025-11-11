@@ -1,0 +1,21 @@
+.sortButton {
+  background-color: var(--ctp-mocha-surface0);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  color: var(---ctp-mocha-text);
+  font-weight: 300;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover {
+    background-color: var(--ctp-mocha-surface1);
+  }
+}

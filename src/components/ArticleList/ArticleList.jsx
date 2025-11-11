@@ -1,26 +1,62 @@
+import { useState } from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import useQuery from '../../hooks/useQuery';
 import './ArticleList.css';
+import SortButton from '../SortButton/SortButton';
 
 const ArticleList = () => {
-  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/articles');
+  const [sortBy, setSortBy] = useState('created_at');
+  const [order, setOrder] = useState('desc');
+  const [error, isLoading, data] = useQuery(
+    `https://northcoders-news-be-f4oe.onrender.com/api/articles?sort_by=${sortBy}&order=${order}`
+  );
 
-  if (isLoading) return <Loading>Loading articles...</Loading>;
+  const handleSort = column => {
+    if (sortBy === column) {
+      setOrder(order === 'desc' ? 'asc' : 'desc');
+    } else {
+      setOrder('desc');
+    }
+    setSortBy(column);
+  };
 
-  if (error) return <Error>{error}</Error>;
+  let html;
+
+  if (isLoading) html = <Loading>Loading articles...</Loading>;
+
+  if (error) html = <Error>{error}</Error>;
 
   if (data) {
-    return (
-      <section id='articleList'>
-        <h1>Top Articles</h1>
-        {data.articles.map(article => (
-          <ArticleCard article={article} key={article.article_id} />
-        ))}
-      </section>
-    );
+    html = data.articles.map(article => <ArticleCard article={article} key={article.article_id} />);
   }
+
+  return (
+    <section id='articleList'>
+      <div id='articleHeader'>
+        <h1>Top Articles</h1>
+        <div id='filters'>
+          <SortButton clickHandler={handleSort} column={'created_at'} sortBy={sortBy} order={order}>
+            Created At
+          </SortButton>
+          <SortButton clickHandler={handleSort} column={'title'} sortBy={sortBy} order={order}>
+            Title
+          </SortButton>
+          <SortButton clickHandler={handleSort} column={'topic'} sortBy={sortBy} order={order}>
+            Topic
+          </SortButton>
+          <SortButton clickHandler={handleSort} column={'author'} sortBy={sortBy} order={order}>
+            Author
+          </SortButton>
+          <SortButton clickHandler={handleSort} column={'votes'} sortBy={sortBy} order={order}>
+            Votes
+          </SortButton>
+        </div>
+      </div>
+      {html}
+    </section>
+  );
 };
 
 export default ArticleList;
