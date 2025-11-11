@@ -1,30 +1,26 @@
-import { useState, useEffect } from 'react';
+import useQuery from '../../hooks/useQuery';
+import Error from '../Error/Error';
+import Loading from '../Loading/Loading';
 import Button from '../Button/Button';
 import './SideBar.css';
 
 const SideBar = () => {
-  const [topics, setTopics] = useState([]);
+  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/topics');
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('https://northcoders-news-be-f4oe.onrender.com/api/topics');
-        const data = await response.json();
-        setTopics(data.topics);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
+  if (isLoading) return <Loading>Loading topics...</Loading>;
 
-  return (
-    <aside id='sideBar'>
-      {topics.map(topic => (
-        <div key={topic.slug}>{topic.slug}</div>
-      ))}
-      <Button>+ Add Topic</Button>
-    </aside>
-  );
+  if (error) return <Error>{error}</Error>;
+
+  if (data) {
+    return (
+      <aside id='sideBar'>
+        {data.topics.map(topic => (
+          <div key={topic.slug}>{topic.slug}</div>
+        ))}
+        <Button>+ Add Topic</Button>
+      </aside>
+    );
+  }
 };
 
 export default SideBar;

@@ -1,7 +1,7 @@
 import './Error.css';
 
 const Error = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className='error'>{children}</div>;
 };
 
 export default Error;

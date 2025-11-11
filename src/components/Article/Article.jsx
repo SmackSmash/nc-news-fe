@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import useQuery from '../../hooks/useQuery';
+import Error from '../Error/Error';
+import Loading from '../Loading/Loading';
 import './Article.css';
 
 const Article = () => {
   const { articleId } = useParams();
 
-  const [article, setArticle] = useState(null);
+  const [error, isLoading, data] = useQuery(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`);
-        const data = await response.json();
-        setArticle(data.article);
-        console.log(data.article);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
+  if (isLoading) return <Loading>Loading topics...</Loading>;
 
-  return <section id='article'>Article works</section>;
+  if (error) return <Error>{error}</Error>;
+
+  if (data) {
+    return (
+      <section id='article'>
+        <h1>{data.article.title}</h1>
+        <p>{data.article.body}</p>
+      </section>
+    );
+  }
 };
 
 export default Article;
