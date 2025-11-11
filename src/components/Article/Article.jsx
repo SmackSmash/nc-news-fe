@@ -27,7 +27,9 @@ const Article = () => {
           </div>
           <p>{body}</p>
         </section>
-        <Button>+ Add Comment</Button>
+        <section id='addComment'>
+          <Button>+ Add Comment</Button>
+        </section>
         <CommentList articleId={articleId} />
       </div>
     );
