@@ -1,7 +1,6 @@
 #footer {
   display: flex;
   justify-content: center;
-  border-top: solid 0.25rem var(--ctp-mocha-surface0);
   padding: 1.5rem 0 2rem;
   color: var(--ctp-mocha-surface2);
 }

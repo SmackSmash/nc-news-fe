@@ -7,7 +7,6 @@ const ArticleCard = ({ article: { article_id, title, author, created_at, votes, 
 
   return (
     <article className='articleCard'>
-      <div className='articleCardVoter'></div>
       <div className='articleCardContent'>
         <div className='articleImgContainer'>
           <img src={article_img_url} alt={title} />
