@@ -2,6 +2,7 @@ import { useParams } from 'react-router';
 import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
+import CommentList from '../CommentList/CommentList';
 import './Article.css';
 
 const Article = () => {
@@ -15,10 +16,13 @@ const Article = () => {
 
   if (data) {
     return (
-      <section id='article'>
-        <h1>{data.article.title}</h1>
-        <p>{data.article.body}</p>
-      </section>
+      <div id='articleContainer'>
+        <section id='article'>
+          <h1>{data.article.title}</h1>
+          <p>{data.article.body}</p>
+        </section>
+        <CommentList articleId={articleId} />
+      </div>
     );
   }
 };

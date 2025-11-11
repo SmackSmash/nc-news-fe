@@ -14,6 +14,7 @@ const ArticleList = () => {
   if (data) {
     return (
       <section id='articleList'>
+        <h1>Top Articles</h1>
         {data.articles.map(article => (
           <ArticleCard article={article} key={article.article_id} />
         ))}

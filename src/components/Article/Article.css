@@ -1,3 +1,7 @@
-#article {
-  flex-grow: 1;
+#articleContainer {
+  display: flex;
+  flex-direction: column;
+  #article {
+    flex-grow: 1;
+  }
 }

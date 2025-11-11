@@ -2,4 +2,8 @@
   position: sticky;
   top: 1rem;
   min-width: 350px;
+  padding: 1.5rem;
+  background-color: var(--ctp-mocha-base);
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
