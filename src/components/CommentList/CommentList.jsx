@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading';
 import './CommentList.css';
 
 const CommentList = ({ articleId }) => {
-  const [error, isLoading, data] = useQuery(
+  const [error, isLoading, data, refetch] = useQuery(
     `https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}/comments`
   );
 
@@ -14,7 +14,7 @@ const CommentList = ({ articleId }) => {
   if (error) return <Error>{error}</Error>;
 
   if (data) {
-    return data.comments.map(comment => <CommentCard comment={comment} key={comment.comment_id} />);
+    return data.comments.map(comment => <CommentCard comment={comment} refetch={refetch} key={comment.comment_id} />);
   }
 };
 

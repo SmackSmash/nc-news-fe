@@ -18,12 +18,17 @@ const Article = () => {
   if (error) return <Error>{error}</Error>;
 
   if (data) {
-    const { article_img_url, author, body, comment_count, created_at, title, topic, votes } = data.article;
+    const { article_img_url, author, body, created_at, title, topic, votes } = data.article;
+
+    const date = new Date(Date.parse(created_at));
 
     return (
       <div id='articleContainer'>
         <section id='article'>
           <h1>{title}</h1>
+          <span className='date'>
+            {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
+          </span>
           <div id='articleImgContainer'>
             <img src={article_img_url} alt={title} />
           </div>

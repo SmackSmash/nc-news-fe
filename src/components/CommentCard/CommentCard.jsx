@@ -4,7 +4,7 @@ import Loading from '../Loading/Loading';
 import PillLink from '../PillLink/PillLink';
 import './CommentCard.css';
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, refetch }) => {
   const { author, body, comment_id, created_at, votes } = comment;
 
   const date = new Date(Date.parse(created_at));
@@ -12,11 +12,10 @@ const CommentCard = ({ comment }) => {
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
 
   const handleDelete = async () => {
-    const response = await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
+    await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
       method: 'DELETE'
     });
-    const json = await response.json();
-    console.log(json);
+    refetch();
   };
 
   if (isLoading) return <Loading>Loading comment...</Loading>;
