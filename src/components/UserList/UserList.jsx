@@ -7,17 +7,19 @@ import './UserList.css';
 const UserList = () => {
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
 
-  if (isLoading) return <Loading>Loading articles...</Loading>;
+  if (isLoading) return <Loading>Loading users...</Loading>;
 
   if (error) return <Error>{error}</Error>;
 
   if (data) {
-    console.log(data.users);
     return (
       <section id='userList'>
-        {data.users.map(user => (
-          <UserCard user={user} />
-        ))}
+        <h1>User List</h1>
+        <section id='userGrid'>
+          {data.users.map(user => (
+            <UserCard user={user} />
+          ))}
+        </section>
       </section>
     );
   }
