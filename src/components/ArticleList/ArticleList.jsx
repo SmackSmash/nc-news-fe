@@ -35,7 +35,7 @@ const ArticleList = () => {
   return (
     <section id='articleList'>
       <div id='articleHeader'>
-        <h1>Top Articles</h1>
+        <h1>All Articles</h1>
         <div id='filters'>
           <SortButton clickHandler={handleSort} column={'created_at'} sortBy={sortBy} order={order}>
             Created At
@@ -50,7 +50,7 @@ const ArticleList = () => {
             Author
           </SortButton>
           <SortButton clickHandler={handleSort} column={'votes'} sortBy={sortBy} order={order}>
-            Votes
+            Likes
           </SortButton>
         </div>
       </div>

@@ -1,0 +1,14 @@
+#nav {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-decoration: none;
+
+    &.active {
+      color: var(--ctp-mocha-peach);
+    }
+  }
+}

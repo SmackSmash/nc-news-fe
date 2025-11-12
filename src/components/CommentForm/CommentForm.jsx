@@ -20,21 +20,27 @@ const CommentForm = ({ articleId }) => {
   const handleSubmit = async e => {
     e.preventDefault();
     setValidate(true);
-    try {
-      const response = await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}/comments`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username: user, body: comment })
-      });
-      const json = await response.json();
-      setIsSubmitting(true);
-      if (json.error) throw new Error({ message: 'Error submitting form' });
-      setSubmitted(true);
-    } catch (error) {
-      setIsSubmitting(false);
-      setSubmissionError(error);
+    if (user && comment) {
+      try {
+        setIsSubmitting(true);
+        const response = await fetch(
+          `https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}/comments`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: user, body: comment })
+          }
+        );
+        const json = await response.json();
+        if (json.error) throw new Error({ message: 'Error submitting form' });
+        setIsSubmitting(false);
+        setSubmitted(true);
+      } catch (error) {
+        setIsSubmitting(false);
+        setSubmissionError(error);
+      }
     }
   };
 

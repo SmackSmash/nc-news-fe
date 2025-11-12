@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
@@ -6,12 +7,13 @@ import './CommentCard.css';
 
 const CommentCard = ({ comment, refetch }) => {
   const { author, body, comment_id, created_at, votes } = comment;
-
   const date = new Date(Date.parse(created_at));
 
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {
+    setIsDeleting(true);
     await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
       method: 'DELETE'
     });
@@ -40,7 +42,7 @@ const CommentCard = ({ comment, refetch }) => {
           </span>
           <span className='likes'>{votes} likes</span>
           <button onClick={handleDelete} className='delete'>
-            Delete Comment
+            {isDeleting ? 'Deleting...' : 'Delete Comment'}
           </button>
         </div>
       </article>

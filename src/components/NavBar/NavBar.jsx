@@ -3,9 +3,8 @@ import './NavBar.css';
 
 const NavBar = () => {
   return (
-    <nav>
-      <NavLink to='/articles'>Articles</NavLink>
-      <NavLink to='/topics'>Topics</NavLink>
+    <nav id='nav'>
+      <NavLink to='/'>Articles</NavLink>
       <NavLink to='/users'>Users</NavLink>
     </nav>
   );
