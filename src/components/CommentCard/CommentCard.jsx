@@ -34,7 +34,7 @@ const CommentCard = ({ comment, refetch }) => {
         </div>
         <p>{body}</p>
         <div className='commentMeta'>
-          <PillLink to='' color='yellow'>
+          <PillLink to='/users' color='yellow'>
             {author}
           </PillLink>
           <span className='date'>

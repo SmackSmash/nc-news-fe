@@ -20,6 +20,7 @@
   background: #11111b;
   background: linear-gradient(0deg, rgba(17, 17, 27, 1) 0%, rgba(24, 24, 37, 1) 100%);
   border: none;
+  outline: none;
   padding: 1rem 1rem;
   border-radius: 0.5rem;
   position: relative;
@@ -35,7 +36,7 @@
     top: -2px;
     left: -2px;
     border-radius: 0.5rem;
-    z-index: -1;
+    z-index: -2;
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
     background-image: radial-gradient(49% 81% at 45% 47%, #ffe20345 0%, #073aff00 100%),
@@ -53,13 +54,34 @@
       radial-gradient(142% 91% at 83% 7%, #ffdb00ff 1%, #ff000000 99%),
       radial-gradient(142% 91% at -6% 74%, #ff0049ff 1%, #ff000000 99%),
       radial-gradient(142% 91% at 111% 84%, #ff7000ff 0%, #ff0000ff 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
-  &:hover {
+  &::after {
+    content: '';
+    display: block;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border-radius: 0.5rem;
+    z-index: -1;
+    background-color: var(--ctp-mocha-surface2);
+    transition: opacity 0.3s;
+  }
+
+  &:hover,
+  &:focus {
     background: linear-gradient(0deg, rgba(24, 24, 37, 1) 0%, rgba(17, 17, 27, 1) 100%);
 
     &::before {
       animation: rainbow 2s linear infinite;
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0;
     }
   }
 }
