@@ -1,11 +1,31 @@
 .selectContainer {
   position: relative;
+  cursor: pointer;
+  width: 170px;
 
   .selectHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--ctp-mocha-base);
+    padding: 0.5rem 1rem;
+
+    &:active {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
   }
   .selectList {
     position: absolute;
     z-index: 1000;
-    background-color: var(--ctp-mocha-blue);
+    width: 100%;
+    background-color: var(--ctp-mocha-base);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+    > div {
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        color: var(--ctp-mocha-blue);
+      }
+    }
   }
 }

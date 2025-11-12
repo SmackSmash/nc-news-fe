@@ -1,6 +1,6 @@
 .articleCard {
   background-color: var(--ctp-mocha-crust);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   display: flex;
   overflow: hidden;
 
@@ -17,7 +17,7 @@
     .articleImgContainer {
       min-width: 170px;
       height: 100px;
-      border-radius: 0.75rem;
+      border-radius: 0.5rem;
       overflow: hidden;
       img {
         width: 100%;

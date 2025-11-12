@@ -1,5 +1,5 @@
 .comment {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: solid 0.125rem var(--ctp-mocha-surface0);
   margin: 3rem 0 1rem;
   position: relative;
@@ -11,7 +11,6 @@
     border-radius: 50vh;
     background-color: #fff;
     overflow: hidden;
-    border: solid 0.125rem var(--ctp-mocha-surface0);
     position: absolute;
     top: -32px;
     left: 20px;
@@ -22,6 +21,26 @@
     }
   }
   p {
-    padding: 1rem 0;
+    padding: 2rem 0;
+    line-height: 1.5rem;
+  }
+  .date {
+    color: var(--ctp-mocha-surface2);
+    font-size: 0.875rem;
+    padding-left: 1.5rem;
+  }
+  .likes {
+    padding-left: 1rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -36px;
+    left: 16px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50vh;
+    background-color: var(--ctp-mocha-red);
+    background-image: linear-gradient(to right, var(--ctp-mocha-red), var(--ctp-mocha-peach));
   }
 }

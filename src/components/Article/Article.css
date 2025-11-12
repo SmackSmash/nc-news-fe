@@ -4,7 +4,7 @@
   #article {
     flex-grow: 1;
     background-color: var(--ctp-mocha-crust);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 2rem;
     margin-bottom: 2rem;
 

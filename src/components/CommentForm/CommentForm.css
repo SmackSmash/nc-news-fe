@@ -1,6 +1,32 @@
 #addComment {
   background-color: var(--ctp-mocha-surface0);
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   z-index: 0;
+
+  #addCommentHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 1rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  #comment {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 10rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    background-color: var(--ctp-mocha-base);
+    color: var(--ctp-mocha-text);
+    font-family: 'Geist', Arial, Helvetica, sans-serif;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+  }
 }

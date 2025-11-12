@@ -18,6 +18,8 @@ const Select = ({ options, value, onChange }) => {
     if (!dropdownRef.current) return;
 
     const handler = e => {
+      if (!dropdownRef.current) return;
+
       if (!dropdownRef.current.contains(e.target)) {
         setIsOpen(false);
       }
@@ -36,7 +38,7 @@ const Select = ({ options, value, onChange }) => {
   return (
     <div ref={dropdownRef} className='selectContainer'>
       <div onClick={() => setIsOpen(!isOpen)} ref={selectRef} className='selectHeader'>
-        {value ? value : 'Select...'}
+        {value ? value : 'Select user'}
         {isOpen ? <IoCaretUpSharp /> : <IoCaretDownSharp />}
       </div>
       <div style={{ top: `${selectHeight}px` }} className='selectList'>

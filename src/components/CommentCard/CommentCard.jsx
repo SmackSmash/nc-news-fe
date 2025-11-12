@@ -7,6 +7,8 @@ import './CommentCard.css';
 const CommentCard = ({ comment }) => {
   const { article_id, author, body, comment_id, created_at, votes } = comment;
 
+  const date = new Date(Date.parse(created_at));
+
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
 
   if (isLoading) return <Loading>Loading comment...</Loading>;
@@ -25,6 +27,10 @@ const CommentCard = ({ comment }) => {
         <PillLink to='' color='yellow'>
           {author}
         </PillLink>
+        <span className='date'>
+          {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
+        </span>
+        <span className='likes'>{votes} likes</span>
       </article>
     );
   }
