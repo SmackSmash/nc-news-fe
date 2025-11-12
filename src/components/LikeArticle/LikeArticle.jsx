@@ -1,23 +1,37 @@
 import { useState } from 'react';
-import { FaThumbsUp, FaRegThumbsUp } from 'react-icons/fa';
+import { FaThumbsUp, FaRegThumbsUp, FaThumbsDown, FaRegThumbsDown } from 'react-icons/fa';
 import './LikeArticle.css';
 
 const LikeArticle = ({ articleId, votes }) => {
   const [likes, setLikes] = useState(votes);
   const [touched, setTouched] = useState(false);
+  const [likeTouched, setLikeTouched] = useState(false);
+  const [dislikeTouched, setDislikeTouched] = useState(false);
 
-  const handleClick = async () => {
+  const handleLike = async () => {
     setTouched(true);
+    setLikeTouched(true);
     setLikes(likes + 1);
-    const response = await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`, {
+    await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ inc_votes: 1 })
     });
-    const json = await response.json();
-    console.log(json);
+  };
+
+  const handleDislike = async () => {
+    setTouched(true);
+    setDislikeTouched(true);
+    setLikes(likes - 1);
+    await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ inc_votes: -1 })
+    });
   };
 
   return (
@@ -25,8 +39,11 @@ const LikeArticle = ({ articleId, votes }) => {
       <span>
         {likes} like{likes !== 1 && 's'}
       </span>
-      <button onClick={handleClick} disabled={touched} className={touched ? 'touched' : ''}>
-        {touched ? <FaThumbsUp /> : <FaRegThumbsUp />}
+      <button onClick={handleLike} disabled={touched} className={likeTouched ? 'likeTouched' : ''}>
+        {likeTouched ? <FaThumbsUp /> : <FaRegThumbsUp />}
+      </button>
+      <button onClick={handleDislike} disabled={touched} className={dislikeTouched ? 'dislikeTouched' : ''}>
+        {dislikeTouched ? <FaThumbsDown /> : <FaRegThumbsDown />}
       </button>
     </div>
   );

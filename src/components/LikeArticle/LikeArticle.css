@@ -11,8 +11,16 @@
     cursor: pointer;
     font-size: 1.5rem;
 
-    &.touched {
+    &:disabled {
+      opacity: 0.5;
+    }
+    &.likeTouched {
       color: var(--ctp-mocha-green);
+      opacity: 1;
+    }
+    &.dislikeTouched {
+      color: var(--ctp-mocha-red);
+      opacity: 1;
     }
   }
 }

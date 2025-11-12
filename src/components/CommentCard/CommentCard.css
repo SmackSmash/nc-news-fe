@@ -24,14 +24,7 @@
     padding: 2rem 0;
     line-height: 1.5rem;
   }
-  .date {
-    color: var(--ctp-mocha-surface2);
-    font-size: 0.875rem;
-    padding-left: 1.5rem;
-  }
-  .likes {
-    padding-left: 1rem;
-  }
+
   &::before {
     content: '';
     position: absolute;
@@ -42,5 +35,25 @@
     border-radius: 50vh;
     background-color: var(--ctp-mocha-red);
     background-image: linear-gradient(to right, var(--ctp-mocha-red), var(--ctp-mocha-peach));
+  }
+  .commentMeta {
+    display: flex;
+    align-items: center;
+    .date {
+      color: var(--ctp-mocha-surface2);
+      font-size: 0.875rem;
+      padding-left: 1.5rem;
+    }
+    .likes {
+      padding-left: 1rem;
+    }
+    .delete {
+      margin-left: auto;
+      background-color: var(--ctp-mocha-red);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
   }
 }

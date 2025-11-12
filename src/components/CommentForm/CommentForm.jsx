@@ -10,11 +10,13 @@ const CommentForm = ({ articleId }) => {
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
   const [user, setUser] = useState(null);
   const [comment, setComment] = useState('');
+  const [validate, setValidate] = useState(false);
 
   const handleSelect = option => setUser(option);
 
   const handleSubmit = e => {
     e.preventDefault();
+    setValidate(true);
     console.log({ user, comment });
   };
 
@@ -27,6 +29,7 @@ const CommentForm = ({ articleId }) => {
       <form onSubmit={handleSubmit} id='addComment'>
         <div id='addCommentHeader'>
           <h3>Add a Comment</h3>
+          {validate && !user && <span className='error'>Please choose a user</span>}
           <Select options={data.users.map(user => user.username)} value={user} onChange={handleSelect} />
         </div>
         <textarea

@@ -5,11 +5,19 @@ import PillLink from '../PillLink/PillLink';
 import './CommentCard.css';
 
 const CommentCard = ({ comment }) => {
-  const { article_id, author, body, comment_id, created_at, votes } = comment;
+  const { author, body, comment_id, created_at, votes } = comment;
 
   const date = new Date(Date.parse(created_at));
 
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
+
+  const handleDelete = async () => {
+    const response = await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
+      method: 'DELETE'
+    });
+    const json = await response.json();
+    console.log(json);
+  };
 
   if (isLoading) return <Loading>Loading comment...</Loading>;
 
@@ -24,13 +32,18 @@ const CommentCard = ({ comment }) => {
           <img src={user.avatar_url} alt={author} />
         </div>
         <p>{body}</p>
-        <PillLink to='' color='yellow'>
-          {author}
-        </PillLink>
-        <span className='date'>
-          {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
-        </span>
-        <span className='likes'>{votes} likes</span>
+        <div className='commentMeta'>
+          <PillLink to='' color='yellow'>
+            {author}
+          </PillLink>
+          <span className='date'>
+            {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
+          </span>
+          <span className='likes'>{votes} likes</span>
+          <button onClick={handleDelete} className='delete'>
+            Delete Comment
+          </button>
+        </div>
       </article>
     );
   }
