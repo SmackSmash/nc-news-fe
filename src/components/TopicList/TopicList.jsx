@@ -1,16 +1,19 @@
 import { useState } from 'react';
+import { useParams } from 'react-router';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import useQuery from '../../hooks/useQuery';
 import SortButton from '../SortButton/SortButton';
-import './ArticleList.css';
+import './TopicList.css';
 
-const ArticleList = () => {
+const TopicList = () => {
+  const { topicSlug } = useParams();
+
   const [sortBy, setSortBy] = useState('created_at');
   const [order, setOrder] = useState('desc');
   const [error, isLoading, data] = useQuery(
-    `https://northcoders-news-be-f4oe.onrender.com/api/articles?sort_by=${sortBy}&order=${order}`
+    `https://northcoders-news-be-f4oe.onrender.com/api/articles?topic=${topicSlug}&sort_by=${sortBy}&order=${order}`
   );
 
   const handleSort = column => {
@@ -35,16 +38,13 @@ const ArticleList = () => {
   return (
     <section id='articleList'>
       <div id='articleHeader'>
-        <h1>All Articles</h1>
+        <h1>{topicSlug[0].toUpperCase() + topicSlug.slice(1)} Articles</h1>
         <div id='filters'>
           <SortButton clickHandler={handleSort} column={'created_at'} sortBy={sortBy} order={order}>
             Created At
           </SortButton>
           <SortButton clickHandler={handleSort} column={'title'} sortBy={sortBy} order={order}>
             Title
-          </SortButton>
-          <SortButton clickHandler={handleSort} column={'topic'} sortBy={sortBy} order={order}>
-            Topic
           </SortButton>
           <SortButton clickHandler={handleSort} column={'author'} sortBy={sortBy} order={order}>
             Author
@@ -59,4 +59,4 @@ const ArticleList = () => {
   );
 };
 
-export default ArticleList;
+export default TopicList;

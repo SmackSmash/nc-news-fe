@@ -17,7 +17,7 @@ const ArticleCard = ({ article: { article_id, title, author, created_at, votes, 
             {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
           </span>
           <div className='articlePillContainer'>
-            <PillLink to='' color='yellow'>
+            <PillLink to='/users' color='yellow'>
               {author}
             </PillLink>
             <PillLink to={`/article/${article_id}#addComment`} color='blue' margin>

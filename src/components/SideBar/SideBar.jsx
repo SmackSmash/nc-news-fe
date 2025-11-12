@@ -17,7 +17,7 @@ const SideBar = () => {
       <aside id='sideBar'>
         <h2>Topics</h2>
         {data.topics.map(topic => (
-          <Link to={`/topics/${topic.slug}`} key={topic.slug} className='sideBarLink'>
+          <Link to={`/topic/${topic.slug}`} key={topic.slug} className='sideBarLink'>
             <span>{topic.slug}</span>
             <p>{topic.description}</p>
           </Link>

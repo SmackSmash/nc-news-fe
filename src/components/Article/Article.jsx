@@ -34,10 +34,10 @@ const Article = () => {
           </div>
           <p>{body}</p>
           <div id='articleMeta'>
-            <PillLink to={`/topics/${topic}`} color='purple'>
+            <PillLink to={`/topic/${topic}`} color='purple'>
               {topic}
             </PillLink>
-            <PillLink to='' color='yellow'>
+            <PillLink to='/users' color='yellow'>
               {author}
             </PillLink>
             <LikeArticle articleId={articleId} votes={votes} />
