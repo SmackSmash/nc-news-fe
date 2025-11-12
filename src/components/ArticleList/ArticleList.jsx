@@ -29,7 +29,7 @@ const ArticleList = () => {
   if (error) html = <Error>{error}</Error>;
 
   if (data) {
-    html = data.articles.map(article => <ArticleCard article={article} key={article.article_id} />);
+    html = data.articles.map(article => <ArticleCard topicLink article={article} key={article.article_id} />);
   }
 
   return (
@@ -38,7 +38,7 @@ const ArticleList = () => {
         <h1>All Articles</h1>
         <div id='filters'>
           <SortButton clickHandler={handleSort} column={'created_at'} sortBy={sortBy} order={order}>
-            Created At
+            Added
           </SortButton>
           <SortButton clickHandler={handleSort} column={'title'} sortBy={sortBy} order={order}>
             Title

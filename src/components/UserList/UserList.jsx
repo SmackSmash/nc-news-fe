@@ -17,7 +17,7 @@ const UserList = () => {
         <h1>User List</h1>
         <section id='userGrid'>
           {data.users.map(user => (
-            <UserCard user={user} />
+            <UserCard user={user} key={user.username} />
           ))}
         </section>
       </section>

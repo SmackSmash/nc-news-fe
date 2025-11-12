@@ -41,7 +41,7 @@ const TopicList = () => {
         <h1>{topicSlug[0].toUpperCase() + topicSlug.slice(1)} Articles</h1>
         <div id='filters'>
           <SortButton clickHandler={handleSort} column={'created_at'} sortBy={sortBy} order={order}>
-            Created At
+            Added
           </SortButton>
           <SortButton clickHandler={handleSort} column={'title'} sortBy={sortBy} order={order}>
             Title

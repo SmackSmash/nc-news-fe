@@ -2,7 +2,10 @@ import { Link } from 'react-router';
 import PillLink from '../PillLink/PillLink';
 import './ArticleCard.css';
 
-const ArticleCard = ({ article: { article_id, title, author, created_at, votes, article_img_url, comment_count } }) => {
+const ArticleCard = ({
+  topicLink,
+  article: { article_id, title, author, created_at, votes, article_img_url, comment_count, topic }
+}) => {
   const date = new Date(Date.parse(created_at));
 
   return (
@@ -17,15 +20,20 @@ const ArticleCard = ({ article: { article_id, title, author, created_at, votes, 
             {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
           </span>
           <div className='articlePillContainer'>
-            <PillLink to='/users' color='yellow'>
+            <span>
+              {votes} Like{votes !== 1 && 's'}
+            </span>
+            <PillLink to='/users' color='yellow' margin>
               {author}
             </PillLink>
-            <PillLink to={`/article/${article_id}#addComment`} color='blue' margin>
+            <PillLink to={`/article/${article_id}#addComment`} color='blue'>
               {comment_count} Comments
             </PillLink>
-            <PillLink to='' color='green'>
-              {votes} Like{votes !== 1 && 's'}
-            </PillLink>
+            {topicLink && (
+              <PillLink to={`/topic/${topic}`} color='purple'>
+                {topic}
+              </PillLink>
+            )}
           </div>
         </div>
       </div>

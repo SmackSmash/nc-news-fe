@@ -48,6 +48,7 @@
       padding-left: 1rem;
     }
     .delete {
+      font-weight: 500;
       margin-left: auto;
       background-color: var(--ctp-mocha-red);
       border: none;
