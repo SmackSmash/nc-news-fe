@@ -22,7 +22,6 @@ const SideBar = () => {
             <p>{topic.description}</p>
           </Link>
         ))}
-        <Button>+ Add Topic</Button>
       </aside>
     );
   }

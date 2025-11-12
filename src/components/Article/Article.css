@@ -31,10 +31,4 @@
       margin-top: 1rem;
     }
   }
-  #addComment {
-    background-color: var(--ctp-mocha-surface0);
-    padding: 1rem;
-    border-radius: 1rem;
-    z-index: 0;
-  }
 }

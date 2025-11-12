@@ -3,7 +3,7 @@ import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import CommentList from '../CommentList/CommentList';
-import Button from '../Button/Button';
+import CommentForm from '../CommentForm/CommentForm';
 import PillLink from '../PillLink/PillLink';
 import './Article.css';
 
@@ -34,9 +34,7 @@ const Article = () => {
             {author}
           </PillLink>
         </section>
-        <section id='addComment'>
-          <Button>+ Add Comment</Button>
-        </section>
+        <CommentForm articleId={articleId} />
         <CommentList articleId={articleId} />
       </div>
     );
