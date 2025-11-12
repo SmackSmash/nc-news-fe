@@ -24,7 +24,7 @@ const ArticleCard = ({ article: { article_id, title, author, created_at, votes, 
               {comment_count} Comments
             </PillLink>
             <PillLink to='' color='green'>
-              {votes} Votes
+              {votes} Like{votes !== 1 && 's'}
             </PillLink>
           </div>
         </div>

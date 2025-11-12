@@ -5,6 +5,7 @@ import Loading from '../Loading/Loading';
 import CommentList from '../CommentList/CommentList';
 import CommentForm from '../CommentForm/CommentForm';
 import PillLink from '../PillLink/PillLink';
+import LikeArticle from '../LikeArticle/LikeArticle';
 import './Article.css';
 
 const Article = () => {
@@ -22,17 +23,20 @@ const Article = () => {
     return (
       <div id='articleContainer'>
         <section id='article'>
-          <PillLink to={`/topics/${topic}`} color='purple'>
-            {topic}
-          </PillLink>
           <h1>{title}</h1>
           <div id='articleImgContainer'>
             <img src={article_img_url} alt={title} />
           </div>
           <p>{body}</p>
-          <PillLink to='' color='yellow'>
-            {author}
-          </PillLink>
+          <div id='articleMeta'>
+            <PillLink to={`/topics/${topic}`} color='purple'>
+              {topic}
+            </PillLink>
+            <PillLink to='' color='yellow'>
+              {author}
+            </PillLink>
+            <LikeArticle articleId={articleId} votes={votes} />
+          </div>
         </section>
         <CommentForm articleId={articleId} />
         <CommentList articleId={articleId} />
