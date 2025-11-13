@@ -14,8 +14,13 @@ const Comments = ({ articleId }) => {
   const commentsRef = useRef(null);
 
   useEffect(() => {
+    let ignore = false;
+
     setTimeout(() => {
-      if (params.get('comments') && data) commentsRef.current.scrollIntoView({ behavior: 'smooth' });
+      if (params.get('comments') && data && !ignore) {
+        commentsRef.current.scrollIntoView({ behavior: 'smooth' });
+        ignore = true;
+      }
     }, 500);
   }, [params, data]);
 
