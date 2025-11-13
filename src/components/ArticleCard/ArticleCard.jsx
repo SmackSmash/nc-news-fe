@@ -26,7 +26,7 @@ const ArticleCard = ({
             <PillLink to='/users' color='yellow' margin>
               {author}
             </PillLink>
-            <PillLink to={`/article/${article_id}#addComment`} color='blue'>
+            <PillLink to={`/article/${article_id}?comments=true`} color='blue'>
               {comment_count} Comments
             </PillLink>
             {topicLink && (
