@@ -2,8 +2,7 @@ import { useParams } from 'react-router';
 import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
-import CommentList from '../CommentList/CommentList';
-import CommentForm from '../CommentForm/CommentForm';
+import Comments from '../Comments/Comments';
 import PillLink from '../PillLink/PillLink';
 import LikeArticle from '../LikeArticle/LikeArticle';
 import './Article.css';
@@ -43,8 +42,7 @@ const Article = () => {
             <LikeArticle articleId={articleId} votes={votes} />
           </div>
         </section>
-        <CommentForm articleId={articleId} />
-        <CommentList articleId={articleId} />
+        <Comments articleId={articleId} />
       </div>
     );
   }

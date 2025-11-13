@@ -2,7 +2,6 @@ import useQuery from '../../hooks/useQuery';
 import CommentCard from '../CommentCard/CommentCard';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
-import './CommentList.css';
 
 const CommentList = ({ articleId }) => {
   const [error, isLoading, data, refetch] = useQuery(
