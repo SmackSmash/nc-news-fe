@@ -11,8 +11,8 @@ const NavBar = ({ topicData }) => {
       <button id='mobileMenu'>
         <GiHamburgerMenu onClick={() => setIsMenuOpen(!isMenuOpen)} />
       </button>
-      <div onClick={() => setIsMenuOpen(false)} id='mobileOverlay' className={isMenuOpen && 'open'}></div>
-      <nav id='nav' className={isMenuOpen && 'open'}>
+      <div onClick={() => setIsMenuOpen(false)} id='mobileOverlay' className={isMenuOpen ? 'open' : undefined}></div>
+      <nav id='nav' className={isMenuOpen ? 'open' : undefined}>
         <NavLink onClick={() => setIsMenuOpen(false)} to='/'>
           Articles
         </NavLink>

@@ -3,7 +3,6 @@ import { MdOutlineKeyboardArrowUp, MdOutlineKeyboardArrowDown } from 'react-icon
 import './SortButton.css';
 
 const SortButton = ({ clickHandler, column, sortBy, order, children }) => {
-  console.log(sortBy);
   const btnClasses = classNames({
     sortButton: true,
     hide: column === 'title' || column === 'topic' || column === 'author'
