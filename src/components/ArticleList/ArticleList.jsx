@@ -49,6 +49,9 @@ const ArticleList = () => {
           <SortButton clickHandler={handleSort} column={'author'} sortBy={sortBy} order={order}>
             Author
           </SortButton>
+          <SortButton clickHandler={handleSort} column={'comment_count'} sortBy={sortBy} order={order}>
+            Comments
+          </SortButton>
           <SortButton clickHandler={handleSort} column={'votes'} sortBy={sortBy} order={order}>
             Likes
           </SortButton>
