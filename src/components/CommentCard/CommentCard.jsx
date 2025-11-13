@@ -32,14 +32,14 @@ const CommentCard = ({ comment, refetch }) => {
         <div className='avatar'>
           <img src={user.avatar_url} alt={author} />
         </div>
+        <PillLink to='/users' color='yellow'>
+          {author}
+        </PillLink>
+        <span className='date'>
+          {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
+        </span>
         <p>{body}</p>
         <div className='commentMeta'>
-          <PillLink to='/users' color='yellow'>
-            {author}
-          </PillLink>
-          <span className='date'>
-            {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
-          </span>
           <span className='likes'>{votes} likes</span>
           <button onClick={handleDelete} className='delete'>
             {isDeleting ? 'Deleting...' : 'Delete Comment'}
