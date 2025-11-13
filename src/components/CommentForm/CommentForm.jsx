@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaFaceSmileWink } from 'react-icons/fa6';
 import useQuery from '../../hooks/useQuery';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
@@ -54,7 +55,10 @@ const CommentForm = ({ articleId, refetch }) => {
   if (submitted) {
     return (
       <div id='addComment'>
-        <h3>Thanks for commenting!</h3>
+        <div id='commentThanks'>
+          <FaFaceSmileWink />
+          <p>Thanks for commenting!</p>
+        </div>
       </div>
     );
   }

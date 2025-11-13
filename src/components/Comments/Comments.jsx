@@ -16,7 +16,7 @@ const Comments = ({ articleId }) => {
   useEffect(() => {
     setTimeout(() => {
       if (params.get('comments')) commentsRef.current.scrollIntoView({ behavior: 'smooth' });
-    }, 30);
+    }, 500);
   }, [params, isLoading]);
 
   return (
