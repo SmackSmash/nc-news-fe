@@ -15,15 +15,17 @@ const Comments = ({ articleId }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (params.get('comments')) commentsRef.current.scrollIntoView({ behavior: 'smooth' });
+      if (params.get('comments') && data) commentsRef.current.scrollIntoView({ behavior: 'smooth' });
     }, 500);
-  }, [params, isLoading]);
+  }, [params, data]);
 
   return (
-    <section id='comments' ref={commentsRef}>
+    <>
       <CommentForm articleId={articleId} refetch={refetch} />
-      <CommentList articleId={articleId} error={error} isLoading={isLoading} data={data} refetch={refetch} />
-    </section>
+      <section id='comments' ref={commentsRef}>
+        <CommentList articleId={articleId} error={error} isLoading={isLoading} data={data} refetch={refetch} />
+      </section>
+    </>
   );
 };
 
