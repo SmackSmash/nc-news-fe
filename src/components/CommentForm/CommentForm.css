@@ -16,6 +16,7 @@
 
     h3 {
       font-size: 1.5rem;
+      font-weight: 600;
     }
     .error {
       margin-left: auto;
@@ -49,5 +50,13 @@
       height: 50px;
       fill: var(--ctp-mocha-peach);
     }
+  }
+  .error {
+    background: var(--ctp-mocha-red);
+    text-align: center;
+    color: var(--ctp-mocha-crust);
+    padding: 0.25rem 1rem;
+    border-radius: 50vh;
+    opacity: 0.8;
   }
 }
