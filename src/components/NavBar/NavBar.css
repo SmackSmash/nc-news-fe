@@ -1,14 +1,20 @@
 #nav {
   display: flex;
-  gap: 1rem;
-
+  gap: 1.25rem;
   a {
     font-size: 1.25rem;
     font-weight: 300;
     text-decoration: none;
+    display: block;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
 
+    &:hover {
+      background-color: var(--ctp-mocha-surface0);
+      box-shadow: 0 0 0 10px var(--ctp-mocha-surface0);
+    }
     &.active {
-      color: var(--ctp-mocha-peach);
+      color: var(--ctp-mocha-blue);
     }
   }
   .topic {
