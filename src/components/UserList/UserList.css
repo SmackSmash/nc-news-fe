@@ -14,3 +14,10 @@
     gap: 1rem;
   }
 }
+@media screen and (max-width: 650px) {
+  #userList {
+    #userGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
