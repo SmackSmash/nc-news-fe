@@ -11,4 +11,14 @@
       color: var(--ctp-mocha-peach);
     }
   }
+  .topic {
+    display: none;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #nav {
+    .topic {
+      display: block;
+    }
+  }
 }

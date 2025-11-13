@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router';
+import useQuery from './hooks/useQuery';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import SideBar from './components/SideBar/SideBar';
@@ -9,9 +10,11 @@ import UserList from './components/UserList/UserList';
 import './App.css';
 
 function App() {
+  const [error, isLoading, topicData] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/topics');
+
   return (
     <>
-      <Header />
+      <Header topicData={topicData} />
       <main className='container'>
         <Routes>
           <Route path='/' element={<ArticleList />} />
@@ -19,7 +22,7 @@ function App() {
           <Route path='/topic/:topicSlug' element={<TopicList />} />
           <Route path='/users' element={<UserList />} />
         </Routes>
-        <SideBar />
+        <SideBar error={error} isLoading={isLoading} data={topicData} />
       </main>
       <Footer />
     </>

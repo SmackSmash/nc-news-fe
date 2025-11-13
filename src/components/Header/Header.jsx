@@ -2,11 +2,11 @@ import Logo from '../Logo/Logo';
 import NavBar from '../NavBar/NavBar';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ topicData }) => {
   return (
     <header id='header' className='container'>
       <Logo />
-      <NavBar />
+      <NavBar topicData={topicData} />
     </header>
   );
 };

@@ -16,12 +16,15 @@
   }
 
   .sideBarLink {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
     text-decoration: none;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     transition: background 0.3s ease-in-out;
     background-color: var(--ctp-mocha-surface0);
-    position: relative;
 
     span {
       text-transform: uppercase;
@@ -34,14 +37,21 @@
       background-color: var(--ctp-mocha-red);
       background-image: linear-gradient(to right, var(--ctp-mocha-red), var(--ctp-mocha-peach));
       color: var(--ctp-mocha-base);
+      position: relative;
       top: -1px;
 
-      span {
+      span,
+      p {
         color: var(--ctp-mocha-base);
       }
     }
     &:active {
       top: 0px;
     }
+  }
+}
+@media screen and (max-width: 1200px) {
+  #sideBar {
+    display: none;
   }
 }

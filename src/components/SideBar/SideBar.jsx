@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import './SideBar.css';
 
-const SideBar = () => {
-  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/topics');
+const SideBar = ({ error, isLoading, data }) => {
   const [info, setInfo] = useState('');
   const [showInfo, setShowInfo] = useState(false);
 
