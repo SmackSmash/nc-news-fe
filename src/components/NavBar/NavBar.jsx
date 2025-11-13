@@ -18,7 +18,7 @@ const NavBar = ({ topicData }) => {
         </NavLink>
         {topicData &&
           topicData.topics.map(({ slug }) => (
-            <NavLink onClick={() => setIsMenuOpen(false)} to={`/topic/${slug}`} className='topic'>
+            <NavLink onClick={() => setIsMenuOpen(false)} to={`/topic/${slug}`} className='topic' key={slug}>
               {slug[0].toUpperCase() + slug.slice(1)}
             </NavLink>
           ))}

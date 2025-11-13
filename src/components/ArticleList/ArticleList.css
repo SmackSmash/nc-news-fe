@@ -19,3 +19,14 @@
     font-weight: 600;
   }
 }
+@media screen and (max-width: 650px) {
+  #articleList {
+    #articleHeader {
+      #filters {
+        .hide {
+          display: none;
+        }
+      }
+    }
+  }
+}
