@@ -3,11 +3,11 @@ import useQuery from '../../hooks/useQuery';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import PillLink from '../PillLink/PillLink';
+import formatDate from '../../utils/formatDate';
 import './CommentCard.css';
 
 const CommentCard = ({ comment, refetch }) => {
   const { author, body, comment_id, created_at, votes } = comment;
-  const date = new Date(Date.parse(created_at));
 
   const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -35,9 +35,7 @@ const CommentCard = ({ comment, refetch }) => {
         <PillLink to='/users' color='yellow'>
           {author}
         </PillLink>
-        <span className='date'>
-          {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
-        </span>
+        <span className='date'>{formatDate(created_at)}</span>
         <p>{body}</p>
         <div className='commentMeta'>
           <span className='likes'>{votes} likes</span>

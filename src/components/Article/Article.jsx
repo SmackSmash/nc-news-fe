@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
 import useQuery from '../../hooks/useQuery';
+import formatDate from '../../utils/formatDate';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import Comments from '../Comments/Comments';
@@ -19,15 +20,11 @@ const Article = () => {
   if (data) {
     const { article_img_url, author, body, created_at, title, topic, votes } = data.article;
 
-    const date = new Date(Date.parse(created_at));
-
     return (
       <div id='articleContainer'>
         <section id='article'>
           <h1>{title}</h1>
-          <span className='date'>
-            {date.toLocaleDateString()} {date.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}
-          </span>
+          <span className='date'>{formatDate(created_at)}</span>
           <div id='articleImgContainer'>
             <img src={article_img_url} alt={title} />
           </div>
