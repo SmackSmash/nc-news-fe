@@ -9,6 +9,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    color: var(--ctp-mocha-surface1);
+    transition: color 0.2s ease-out;
 
     svg {
       width: 25px;
@@ -16,7 +18,7 @@
     }
 
     &:hover {
-      color: var(--ctp-mocha-rosewater);
+      color: var(--ctp-mocha-text);
     }
   }
 }
