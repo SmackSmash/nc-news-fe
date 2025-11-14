@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import formatDate from '../../utils/formatDate';
+import Image from '../Image/Image';
 import PillLink from '../PillLink/PillLink';
 import './ArticleCard.css';
 
@@ -11,7 +12,7 @@ const ArticleCard = ({
     <article className='articleCard'>
       <div className='articleCardContent'>
         <div className='articleImgContainer'>
-          <img src={article_img_url} alt={title} />
+          <Image src={article_img_url} alt={title} />
         </div>
         <div className='articleContentContainer'>
           <Link to={`/article/${article_id}`}>{title}</Link>

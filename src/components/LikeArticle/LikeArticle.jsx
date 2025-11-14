@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FaThumbsUp, FaRegThumbsUp, FaThumbsDown, FaRegThumbsDown } from 'react-icons/fa';
-import Error from '../Error/Error';
 import './LikeArticle.css';
 
 const LikeArticle = ({ articleId, votes }) => {

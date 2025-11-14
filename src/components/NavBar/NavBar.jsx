@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RiCloseLargeFill } from 'react-icons/ri';
-import './NavBar.css';
 import { useState } from 'react';
+import './NavBar.css';
 
 const NavBar = ({ topicData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
