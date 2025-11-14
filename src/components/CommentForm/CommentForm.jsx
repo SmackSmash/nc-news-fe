@@ -7,7 +7,7 @@ import Select from '../Select/Select';
 import Button from '../Button/Button';
 import './CommentForm.css';
 
-const CommentForm = ({ articleId, refetch }) => {
+const CommentForm = ({ articleId, setCommentData }) => {
   const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
   const [user, setUser] = useState(null);
   const [comment, setComment] = useState('');
@@ -38,7 +38,9 @@ const CommentForm = ({ articleId, refetch }) => {
         if (json.error) throw new Error({ message: 'Error submitting form' });
         setIsSubmitting(false);
         setSubmitted(true);
-        refetch();
+        setCommentData(currentComments => {
+          return { comments: [json.comment, ...currentComments.comments] };
+        });
       } catch (error) {
         setIsSubmitting(false);
         setSubmissionError(error);
