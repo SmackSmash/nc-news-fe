@@ -11,11 +11,13 @@ const useQuery = (queryString, method = 'GET') => {
       setIsLoading(true);
       const response = await fetch(queryString, { method });
       const json = await response.json();
+      if (json.error) throw new Error(json.error.errorMessage);
       setIsLoading(false);
       setData(json);
     } catch (error) {
+      console.log(error.message);
       setIsLoading(false);
-      setError(error.message);
+      setError(error);
     }
   }, [queryString, method]);
 

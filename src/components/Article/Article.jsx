@@ -17,7 +17,7 @@ const Article = () => {
 
   if (isLoading) return <Loading>Loading article...</Loading>;
 
-  if (error) return <Error>{error}</Error>;
+  if (error) return <Error>{error.message}</Error>;
 
   if (data) {
     const { article_img_url, author, body, created_at, title, topic, votes } = data.article;
