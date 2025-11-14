@@ -10,7 +10,7 @@ const Image = ({ src, alt }) => {
     loaded
   });
 
-  return <img onLoad={() => setLoaded(true)} src={src} alt={alt} className={imgClasses} />;
+  return <img onLoad={() => setLoaded(true)} src={src} alt={alt} className={imgClasses} loading='lazy' />;
 };
 
 export default Image;
