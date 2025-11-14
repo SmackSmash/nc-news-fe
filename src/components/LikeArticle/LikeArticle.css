@@ -1,8 +1,9 @@
 #likeArticle {
-  margin-left: auto;
   display: flex;
   align-items: center;
+  justify-content: end;
   gap: 1rem;
+  padding-top: 2rem;
 
   button {
     background: transparent;

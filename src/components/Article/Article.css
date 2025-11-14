@@ -17,7 +17,6 @@
     .date {
       color: var(--ctp-mocha-surface2);
       display: block;
-      padding-top: 1rem;
     }
     #articleImgContainer {
       width: 100%;
@@ -39,7 +38,7 @@
     }
     #articleMeta {
       display: flex;
-      padding-top: 2rem;
+      padding-top: 1rem;
       align-items: center;
       gap: 1rem;
     }

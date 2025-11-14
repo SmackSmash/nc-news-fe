@@ -26,20 +26,20 @@ const Article = () => {
       <div id='articleContainer'>
         <section id='article'>
           <h1>{title}</h1>
-          <span className='date'>{formatDate(created_at)}</span>
+          <div id='articleMeta'>
+            <span className='date'>{formatDate(created_at)}</span>
+            <PillLink to='/users' color='yellow'>
+              {author}
+            </PillLink>
+            <PillLink to={`/topic/${topic}`} color='purple'>
+              {topic}
+            </PillLink>
+          </div>
           <div id='articleImgContainer'>
             <img src={article_img_url} alt={title} />
           </div>
           <p>{body}</p>
-          <div id='articleMeta'>
-            <PillLink to={`/topic/${topic}`} color='purple'>
-              {topic}
-            </PillLink>
-            <PillLink to='/users' color='yellow'>
-              {author}
-            </PillLink>
-            <LikeArticle articleId={articleId} votes={votes} />
-          </div>
+          <LikeArticle articleId={articleId} votes={votes} />
         </section>
         <Comments articleId={articleId} />
       </div>
