@@ -21,6 +21,9 @@
   .topic {
     display: none;
   }
+  #closeMenu {
+    display: none;
+  }
 }
 #mobileMenu {
   background: transparent;
@@ -66,6 +69,17 @@
 
     a {
       font-size: 1.5rem;
+    }
+    #closeMenu {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--ctp-mocha-text);
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2rem;
+      display: block;
     }
     &.open {
       transform: translateX(100%);

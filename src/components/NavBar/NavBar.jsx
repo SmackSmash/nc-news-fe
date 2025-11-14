@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { RiCloseLargeFill } from 'react-icons/ri';
 import './NavBar.css';
 import { useState } from 'react';
 
@@ -13,6 +14,9 @@ const NavBar = ({ topicData }) => {
       </button>
       <div onClick={() => setIsMenuOpen(false)} id='mobileOverlay' className={isMenuOpen ? 'open' : undefined}></div>
       <nav id='nav' className={isMenuOpen ? 'open' : undefined}>
+        <button onClick={() => setIsMenuOpen(false)} id='closeMenu'>
+          <RiCloseLargeFill />
+        </button>
         <NavLink onClick={() => setIsMenuOpen(false)} to='/'>
           Articles
         </NavLink>
