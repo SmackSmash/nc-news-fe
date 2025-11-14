@@ -58,10 +58,19 @@
   }
 }
 @media screen and (max-width: 650px) {
-  .articleCardContent {
-    flex-direction: column;
-    .articlePillContainer {
-      padding: 2rem 0 0;
+  .articleCard {
+    .articleCardContent {
+      flex-direction: column;
+      .articleContentContainer {
+        .articlePillContainer {
+          padding: 2rem 0 0;
+          gap: 0.5rem;
+
+          & > span {
+            font-size: 0.875rem;
+          }
+        }
+      }
     }
   }
 }
