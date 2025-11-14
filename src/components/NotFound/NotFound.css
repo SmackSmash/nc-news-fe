@@ -1,0 +1,17 @@
+#notFound {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-grow: 1;
+  background-color: var(--ctp-mocha-crust);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}

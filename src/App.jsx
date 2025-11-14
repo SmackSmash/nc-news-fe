@@ -7,6 +7,7 @@ import ArticleList from './components/ArticleList/ArticleList';
 import TopicList from './components/TopicList/TopicList';
 import Article from './components/Article/Article';
 import UserList from './components/UserList/UserList';
+import NotFound from './components/NotFound/NotFound';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/article/:articleId' element={<Article />} />
           <Route path='/topic/:topicSlug' element={<TopicList />} />
           <Route path='/users' element={<UserList />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <SideBar error={error} isLoading={isLoading} data={topicData} />
       </main>
