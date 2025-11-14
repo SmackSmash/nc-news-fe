@@ -36,12 +36,12 @@ const LikeArticle = ({ articleId, votes }) => {
 
   return (
     <div id='likeArticle'>
-      <span>
-        {likes} like{likes !== 1 && 's'}
-      </span>
       <button onClick={handleLike} disabled={touched} className={likeTouched ? 'likeTouched' : ''}>
         {likeTouched ? <FaThumbsUp /> : <FaRegThumbsUp />}
       </button>
+      <span>
+        {likes} like{likes !== 1 && 's'}
+      </span>
       <button onClick={handleDislike} disabled={touched} className={dislikeTouched ? 'dislikeTouched' : ''}>
         {dislikeTouched ? <FaThumbsDown /> : <FaRegThumbsDown />}
       </button>
