@@ -9,7 +9,7 @@ import './CommentCard.css';
 const CommentCard = ({ comment, refetch }) => {
   const { author, body, comment_id, created_at, votes } = comment;
 
-  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
+  const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {

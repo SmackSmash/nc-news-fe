@@ -13,6 +13,9 @@
   align-items: center;
   flex-grow: 1;
   gap: 1rem;
+  background-color: var(--ctp-mocha-mantle);
+  min-height: 300px;
+  border-radius: 0.5rem;
 
   .loader {
     width: 48px;

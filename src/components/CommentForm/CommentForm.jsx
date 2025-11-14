@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 import './CommentForm.css';
 
 const CommentForm = ({ articleId, refetch }) => {
-  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
+  const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
   const [user, setUser] = useState(null);
   const [comment, setComment] = useState('');
   const [validate, setValidate] = useState(false);

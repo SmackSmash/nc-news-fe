@@ -13,7 +13,7 @@ const TopicList = () => {
 
   const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'created_at');
   const [order, setOrder] = useState(searchParams.get('order') || 'desc');
-  const [error, isLoading, data] = useQuery(
+  const { error, isLoading, data } = useQuery(
     `https://northcoders-news-be-f4oe.onrender.com/api/articles?topic=${topicSlug}&sort_by=${sortBy}&order=${order}`
   );
 

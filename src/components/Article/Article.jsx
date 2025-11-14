@@ -11,7 +11,9 @@ import './Article.css';
 const Article = () => {
   const { articleId } = useParams();
 
-  const [error, isLoading, data] = useQuery(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`);
+  const { error, isLoading, data } = useQuery(
+    `https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`
+  );
 
   if (isLoading) return <Loading>Loading article...</Loading>;
 

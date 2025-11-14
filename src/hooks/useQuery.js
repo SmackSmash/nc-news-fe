@@ -23,7 +23,7 @@ const useQuery = (queryString, method = 'GET') => {
     fetchData();
   }, [fetchData]);
 
-  return [error, isLoading, data, fetchData];
+  return { error, isLoading, data, setData, refetch: fetchData };
 };
 
 export default useQuery;

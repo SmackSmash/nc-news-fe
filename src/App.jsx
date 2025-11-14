@@ -10,7 +10,7 @@ import UserList from './components/UserList/UserList';
 import './App.css';
 
 function App() {
-  const [error, isLoading, topicData] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/topics');
+  const { error, isLoading, data: topicData } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/topics');
 
   return (
     <>

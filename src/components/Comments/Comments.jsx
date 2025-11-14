@@ -7,7 +7,7 @@ import CommentList from '../CommentList/CommentList';
 const Comments = ({ articleId }) => {
   const [params] = useSearchParams();
 
-  const [error, isLoading, data, refetch] = useQuery(
+  const { error, isLoading, data, refetch } = useQuery(
     `https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}/comments`
   );
 

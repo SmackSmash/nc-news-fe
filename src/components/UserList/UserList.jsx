@@ -5,7 +5,7 @@ import UserCard from '../UserCard/UserCard';
 import './UserList.css';
 
 const UserList = () => {
-  const [error, isLoading, data] = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
+  const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
 
   if (isLoading) return <Loading>Loading users...</Loading>;
 
