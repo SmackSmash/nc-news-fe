@@ -38,8 +38,8 @@
     width: 68px;
     height: 68px;
     border-radius: 50vh;
-    background-color: var(--ctp-mocha-red);
-    background-image: linear-gradient(to right, var(--ctp-mocha-red), var(--ctp-mocha-peach));
+    background-color: var(--ctp-mocha-blue);
+    background-image: linear-gradient(to right, var(--ctp-mocha-green), var(--ctp-mocha-blue));
   }
   .commentMeta {
     display: flex;

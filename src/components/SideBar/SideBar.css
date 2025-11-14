@@ -34,8 +34,8 @@
       font-size: 0.875rem;
     }
     &:hover {
-      background-color: var(--ctp-mocha-red);
-      background-image: linear-gradient(to right, var(--ctp-mocha-red), var(--ctp-mocha-peach));
+      background-color: var(--ctp-mocha-blue);
+      background-image: linear-gradient(to right, var(--ctp-mocha-green), var(--ctp-mocha-blue));
       color: var(--ctp-mocha-base);
       position: relative;
       top: -1px;
