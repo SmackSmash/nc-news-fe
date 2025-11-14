@@ -18,9 +18,19 @@ const SideBar = ({ error, isLoading, data }) => {
     setShowInfo(false);
   };
 
-  if (isLoading) return <Loading>Loading topics...</Loading>;
+  if (isLoading)
+    return (
+      <aside id='sideBar'>
+        <Loading>Loading topics...</Loading>
+      </aside>
+    );
 
-  if (error) return <Error>{error}</Error>;
+  if (error)
+    return (
+      <aside id='sideBar'>
+        <Error>{error}</Error>
+      </aside>
+    );
 
   if (data) {
     return (
