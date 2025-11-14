@@ -31,7 +31,7 @@ const TopicList = () => {
 
   if (isLoading) html = <Loading>Loading articles...</Loading>;
 
-  if (error) html = <Error>{error}</Error>;
+  if (error) html = <Error>{error.message}</Error>;
 
   if (data) {
     html = data.articles.map(article => <ArticleCard article={article} key={article.article_id} />);

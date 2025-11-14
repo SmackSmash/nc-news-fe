@@ -24,7 +24,7 @@ const CommentCard = ({ comment, setCommentData }) => {
 
   if (isLoading) return <Loading>Loading comment...</Loading>;
 
-  if (error) return <Error>{error}</Error>;
+  if (error) return <Error>{error.message}</Error>;
 
   if (data) {
     const user = data.users.find(user => user.username === author);

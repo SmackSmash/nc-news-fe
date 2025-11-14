@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading';
 const CommentList = ({ error, isLoading, data, setCommentData }) => {
   if (isLoading) return <Loading>Loading comments...</Loading>;
 
-  if (error) return <Error>{error}</Error>;
+  if (error) return <Error>{error.message}</Error>;
 
   if (data) {
     return data.comments.map(comment => (

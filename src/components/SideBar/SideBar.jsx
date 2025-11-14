@@ -28,7 +28,7 @@ const SideBar = ({ error, isLoading, data }) => {
   if (error)
     return (
       <aside id='sideBar'>
-        <Error>{error}</Error>
+        <Error>{error.message}</Error>
       </aside>
     );
 

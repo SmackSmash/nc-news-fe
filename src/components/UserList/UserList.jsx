@@ -9,7 +9,7 @@ const UserList = () => {
 
   if (isLoading) return <Loading>Loading users...</Loading>;
 
-  if (error) return <Error>{error}</Error>;
+  if (error) return <Error>{error.message}</Error>;
 
   if (data) {
     return (

@@ -15,7 +15,6 @@ const useQuery = (queryString, method = 'GET') => {
       setIsLoading(false);
       setData(json);
     } catch (error) {
-      console.log(error.message);
       setIsLoading(false);
       setError(error);
     }
