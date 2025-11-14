@@ -25,3 +25,7 @@
     }
   }
 }
+#likeError {
+  color: var(--ctp-mocha-red);
+  text-align: center;
+}
