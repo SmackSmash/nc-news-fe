@@ -53,6 +53,7 @@
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
       cursor: pointer;
+      visibility: hidden;
 
       &:hover {
         position: relative;
@@ -60,6 +61,13 @@
       }
       &:active {
         top: 0px;
+      }
+    }
+  }
+  &:hover {
+    .commentMeta {
+      > .delete {
+        visibility: visible;
       }
     }
   }
