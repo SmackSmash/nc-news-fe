@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import useQuery from '../../hooks/useQuery';
+import formatDate from '../../utils/formatDate';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import PillLink from '../PillLink/PillLink';
-import formatDate from '../../utils/formatDate';
+import Image from '../Image/Image';
 import './CommentCard.css';
 
 const CommentCard = ({ comment, setCommentData }) => {
@@ -32,7 +33,7 @@ const CommentCard = ({ comment, setCommentData }) => {
     return (
       <article className='comment'>
         <div className='avatar'>
-          <img src={user.avatar_url} alt={author} />
+          <Image src={user.avatar_url} alt={author} />
         </div>
         <PillLink to='/users' color='yellow'>
           {author}

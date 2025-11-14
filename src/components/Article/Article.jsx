@@ -5,6 +5,7 @@ import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import Comments from '../Comments/Comments';
 import PillLink from '../PillLink/PillLink';
+import Image from '../Image/Image';
 import LikeArticle from '../LikeArticle/LikeArticle';
 import './Article.css';
 
@@ -36,7 +37,7 @@ const Article = () => {
             </PillLink>
           </div>
           <div id='articleImgContainer'>
-            <img src={article_img_url} alt={title} />
+            <Image src={article_img_url} alt={title} />
           </div>
           <p>{body}</p>
           <LikeArticle articleId={articleId} votes={votes} />
