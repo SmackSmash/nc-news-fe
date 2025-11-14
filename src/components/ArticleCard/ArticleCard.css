@@ -62,10 +62,6 @@
     flex-direction: column;
     .articlePillContainer {
       padding: 2rem 0 0;
-      flex-wrap: wrap;
-      & > span {
-        width: 100%;
-      }
     }
   }
 }
