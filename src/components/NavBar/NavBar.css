@@ -55,7 +55,7 @@
     position: fixed;
     top: 0;
     height: 100%;
-    width: 50%;
+    width: 75%;
     background-color: var(--ctp-mocha-surface0);
     flex-direction: column;
     text-align: center;
@@ -82,7 +82,7 @@
       display: block;
     }
     &.open {
-      transform: translateX(100%);
+      transform: translateX(calc(100vw - 100%));
     }
   }
   #mobileMenu {
