@@ -18,7 +18,7 @@
       font-size: 1.5rem;
       font-weight: 600;
     }
-    .error {
+    .formError {
       margin-left: auto;
       display: inline-block;
       max-width: fit-content;
@@ -51,7 +51,7 @@
       fill: var(--ctp-mocha-peach);
     }
   }
-  .error {
+  .formError {
     color: var(--ctp-mocha-red);
     padding: 0.25rem 0;
   }

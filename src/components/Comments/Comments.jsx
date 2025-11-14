@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router';
 import useQuery from '../../hooks/useQuery';
 import CommentForm from '../CommentForm/CommentForm';
@@ -6,6 +6,7 @@ import CommentList from '../CommentList/CommentList';
 
 const Comments = ({ articleId }) => {
   const [params] = useSearchParams();
+  const [isScrollable, setIsScrollable] = useState(true);
 
   const {
     error,
@@ -17,12 +18,14 @@ const Comments = ({ articleId }) => {
   const commentsRef = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (params.get('comments') && data) {
+    if (params.get('comments') && data && isScrollable) {
+      setIsScrollable(false);
+
+      setTimeout(() => {
         commentsRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 500);
-  }, [params, data]);
+      }, 500);
+    }
+  }, [params, data, isScrollable]);
 
   return (
     <>

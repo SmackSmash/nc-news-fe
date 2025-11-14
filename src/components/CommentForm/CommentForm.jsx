@@ -70,7 +70,7 @@ const CommentForm = ({ articleId, setCommentData }) => {
       <form onSubmit={handleSubmit} id='addComment'>
         <div id='addCommentHeader'>
           <h3>Have your say</h3>
-          {validate && !user && <span className='error'>Please select a user</span>}
+          {validate && !user && <span className='formError'>Please select a user</span>}
           <Select options={data.users.map(user => user.username)} value={user} onChange={handleSelect} />
         </div>
         <textarea
@@ -79,7 +79,7 @@ const CommentForm = ({ articleId, setCommentData }) => {
           name='comment'
           id='comment'
           placeholder='Write your comment here...'></textarea>
-        {validate && !comment && <span className='error'>Please enter a comment</span>}
+        {validate && !comment && <span className='formError'>Please enter a comment</span>}
         <Button>+ Add Comment</Button>
       </form>
     );

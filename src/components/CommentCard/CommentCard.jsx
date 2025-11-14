@@ -42,7 +42,7 @@ const CommentCard = ({ comment, setCommentData }) => {
         <div className='commentMeta'>
           <span className='likes'>{votes} likes</span>
           <button onClick={handleDelete} className='delete'>
-            {isDeleting ? 'Deleting...' : 'Delete Comment'}
+            {isDeleting ? 'Deleting...' : 'Delete'}
           </button>
         </div>
       </article>
