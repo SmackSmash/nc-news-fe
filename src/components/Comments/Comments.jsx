@@ -11,19 +11,15 @@ const Comments = ({ articleId }) => {
     error,
     isLoading,
     data,
-    setData: setCommentData,
-    refetch
+    setData: setCommentData
   } = useQuery(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}/comments`);
 
   const commentsRef = useRef(null);
 
   useEffect(() => {
-    let ignore = false;
-
     setTimeout(() => {
-      if (params.get('comments') && data && !ignore) {
+      if (params.get('comments') && data) {
         commentsRef.current.scrollIntoView({ behavior: 'smooth' });
-        ignore = true;
       }
     }, 500);
   }, [params, data]);
@@ -32,7 +28,13 @@ const Comments = ({ articleId }) => {
     <>
       <CommentForm articleId={articleId} setCommentData={setCommentData} />
       <section id='comments' ref={commentsRef}>
-        <CommentList articleId={articleId} error={error} isLoading={isLoading} data={data} refetch={refetch} />
+        <CommentList
+          articleId={articleId}
+          error={error}
+          isLoading={isLoading}
+          data={data}
+          setCommentData={setCommentData}
+        />
       </section>
     </>
   );

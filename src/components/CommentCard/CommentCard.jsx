@@ -6,7 +6,7 @@ import PillLink from '../PillLink/PillLink';
 import formatDate from '../../utils/formatDate';
 import './CommentCard.css';
 
-const CommentCard = ({ comment, refetch }) => {
+const CommentCard = ({ comment, setCommentData }) => {
   const { author, body, comment_id, created_at, votes } = comment;
 
   const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
@@ -17,7 +17,9 @@ const CommentCard = ({ comment, refetch }) => {
     await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
       method: 'DELETE'
     });
-    refetch();
+    setCommentData(currentComments => {
+      return { comments: currentComments.comments.filter(comment => comment.comment_id !== comment_id) };
+    });
   };
 
   if (isLoading) return <Loading>Loading comment...</Loading>;
