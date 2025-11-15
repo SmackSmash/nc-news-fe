@@ -12,15 +12,22 @@ const CommentCard = ({ comment, setCommentData }) => {
 
   const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [deletionError, setDeletionError] = useState(null);
 
   const handleDelete = async () => {
     setIsDeleting(true);
-    await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
-      method: 'DELETE'
-    });
-    setCommentData(currentComments => {
-      return { comments: currentComments.comments.filter(comment => comment.comment_id !== comment_id) };
-    });
+    try {
+      await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/comments/${comment_id}`, {
+        method: 'DELETE'
+      });
+      setIsDeleting(false);
+      setCommentData(currentComments => {
+        return { comments: currentComments.comments.filter(comment => comment.comment_id !== comment_id) };
+      });
+    } catch (error) {
+      setIsDeleting(false);
+      setDeletionError(error);
+    }
   };
 
   if (isLoading) return <Loading>Loading comment...</Loading>;
@@ -46,6 +53,7 @@ const CommentCard = ({ comment, setCommentData }) => {
             {isDeleting ? 'Deleting...' : 'Delete'}
           </button>
         </div>
+        {deletionError && <p className='deletionError'>Error deleting post: {deletionError.message}</p>}
       </article>
     );
   }

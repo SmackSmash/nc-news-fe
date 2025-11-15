@@ -64,6 +64,9 @@
       }
     }
   }
+  .deletionError {
+    color: var(--ctp-mocha-red);
+  }
   &:hover {
     .commentMeta {
       > .delete {
