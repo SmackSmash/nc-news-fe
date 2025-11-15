@@ -12,7 +12,7 @@ import './Article.css';
 const Article = () => {
   const { articleId } = useParams();
 
-  const { error, isLoading, data } = useQuery(
+  const { error, isLoading, data, setData } = useQuery(
     `https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`
   );
 
@@ -40,7 +40,7 @@ const Article = () => {
             <Image src={article_img_url} alt={title} />
           </div>
           <p>{body}</p>
-          <LikeArticle articleId={articleId} votes={votes} />
+          <LikeArticle articleId={articleId} votes={votes} setData={setData} />
         </section>
         <Comments articleId={articleId} />
       </div>
