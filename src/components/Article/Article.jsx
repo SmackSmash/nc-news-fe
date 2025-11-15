@@ -1,3 +1,4 @@
+import { useState, useOptimistic, startTransition } from 'react';
 import { useParams } from 'react-router';
 import useQuery from '../../hooks/useQuery';
 import formatDate from '../../utils/formatDate';
@@ -15,13 +16,36 @@ const Article = () => {
   const { error, isLoading, data, setData } = useQuery(
     `https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`
   );
+  const [optimisticData, setOptimisticData] = useOptimistic(data);
+  const [voteError, setVoteError] = useState(null);
+
+  const updateArticleVotes = num => {
+    const updatedArticle = structuredClone(data);
+    updatedArticle.article.votes += num;
+    startTransition(async () => {
+      setOptimisticData(updatedArticle);
+      try {
+        const response = await fetch(`https://northcoders-news-be-f4oe.onrender.com/api/articles/${articleId}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ inc_votes: num })
+        });
+        const json = await response.json();
+        setData(json);
+      } catch (error) {
+        setVoteError(error);
+      }
+    });
+  };
 
   if (isLoading) return <Loading>Loading article...</Loading>;
 
   if (error) return <Error>{error.message}</Error>;
 
-  if (data) {
-    const { article_img_url, author, body, created_at, title, topic, votes } = data.article;
+  if (optimisticData && optimisticData.article) {
+    const { article_img_url, author, body, created_at, title, topic, votes } = optimisticData.article;
 
     return (
       <div id='articleContainer'>
@@ -40,7 +64,7 @@ const Article = () => {
             <Image src={article_img_url} alt={title} />
           </div>
           <p>{body}</p>
-          <LikeArticle articleId={articleId} votes={votes} setData={setData} />
+          <LikeArticle votes={votes} updateArticleVotes={updateArticleVotes} voteError={voteError} />
         </section>
         <Comments articleId={articleId} />
       </div>
