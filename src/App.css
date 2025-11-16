@@ -1,11 +1,12 @@
 main {
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: stretch;
 }
 .container {
   min-width: 1200px;
   max-width: 1200px;
+  flex-grow: 1;
 }
 @media screen and (max-width: 1200px) {
   .container {

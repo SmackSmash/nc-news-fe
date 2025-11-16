@@ -4,6 +4,7 @@
   align-items: flex-end;
   padding: 2rem 0 1.5rem;
   position: relative;
+  flex-grow: 0;
 }
 @media screen and (max-width: 650px) {
   #header {
