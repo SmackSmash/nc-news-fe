@@ -4,7 +4,6 @@
   padding: 1.5rem 0 2rem;
   color: var(--ctp-mocha-surface2);
   flex-grow: 0;
-  background-color: var(--ctp-mocha-base);
   border-top: solid 1px var(--ctp-mocha-surface0);
   width: 100%;
 
