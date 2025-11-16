@@ -2,7 +2,7 @@
   0% {
     left: 35px;
     top: 35px;
-    z-index: 1;
+    z-index: 2;
     transform: scale(1);
     color: var(--ctp-mocha-text);
   }
@@ -10,12 +10,12 @@
     transform: scale(1.2);
   }
   49% {
-    z-index: 1;
+    z-index: 2;
   }
   50% {
     left: -5px;
     top: -5px;
-    z-index: -1;
+    z-index: 0;
     transform: scale(1);
     color: var(--ctp-mocha-text);
   }
@@ -24,12 +24,12 @@
     color: var(--ctp-mocha-base);
   }
   99% {
-    z-index: -1;
+    z-index: 0;
   }
   100% {
     left: 35px;
     top: 35px;
-    z-index: 1;
+    z-index: 2;
     transform: scale(1);
     color: var(--ctp-mocha-text);
   }
@@ -44,6 +44,7 @@
   #globe {
     width: 2.75rem;
     height: 2.75rem;
+    z-index: 1;
   }
   #satellite {
     width: 12px;
