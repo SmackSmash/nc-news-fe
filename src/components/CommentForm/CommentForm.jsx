@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaFaceSmileWink } from 'react-icons/fa6';
+import { FaComment } from 'react-icons/fa';
 import useQuery from '../../hooks/useQuery';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
@@ -69,7 +70,10 @@ const CommentForm = ({ articleId, setCommentData }) => {
     return (
       <form onSubmit={handleSubmit} id='addComment'>
         <div id='addCommentHeader'>
-          <h3>Have your say</h3>
+          <h3>
+            <FaComment />
+            Have your say
+          </h3>
           {validate && !user && <span className='formError'>Please select a user</span>}
           <Select options={data.users.map(user => user.username)} value={user} onChange={handleSelect} />
         </div>

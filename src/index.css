@@ -170,7 +170,7 @@ video {
   vertical-align: baseline;
   font-family: 'Geist', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 300;
   font-style: normal;
   color: var(--ctp-mocha-text);
 }
