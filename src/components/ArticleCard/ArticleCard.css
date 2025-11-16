@@ -1,15 +1,17 @@
 .articleCard {
-  background-color: var(--ctp-mocha-crust);
-  border-radius: 0.5rem;
   display: flex;
   overflow: hidden;
+  border-bottom: solid 1px var(--ctp-mocha-surface0);
 
+  &:last-child {
+    border: none;
+  }
   .articleCardVoter {
     min-width: 50px;
     background-color: var(--ctp-mocha-base);
   }
   .articleCardContent {
-    padding: 1rem;
+    padding: 1rem 0;
     flex-grow: 1;
     display: flex;
     gap: 1rem;

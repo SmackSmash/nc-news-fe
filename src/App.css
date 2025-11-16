@@ -1,6 +1,7 @@
 main {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  padding: 2rem 0;
   align-items: stretch;
 }
 .container {

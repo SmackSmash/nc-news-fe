@@ -1,11 +1,10 @@
 #articleContainer {
   display: flex;
   flex-direction: column;
+
   #article {
     flex-grow: 1;
-    background-color: var(--ctp-mocha-crust);
     border-radius: 0.5rem;
-    padding: 2rem;
     margin-bottom: 2rem;
 
     h1 {
@@ -21,7 +20,7 @@
     }
     #articleImgContainer {
       width: 100%;
-      background-color: var(--ctp-mocha-mantle);
+      background-color: var(--ctp-mocha-crust);
       border-radius: 0.4rem;
       display: flex;
       justify-content: center;

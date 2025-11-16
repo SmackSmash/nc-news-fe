@@ -4,7 +4,7 @@ import './Header.css';
 
 const Header = ({ topicData }) => {
   return (
-    <header id='header' className='container'>
+    <header id='header'>
       <Logo />
       <NavBar topicData={topicData} />
     </header>

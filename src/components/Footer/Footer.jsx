@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer id='footer' className='container'>
+    <footer id='footer'>
       <a target='_blank' href='https://github.com/SmackSmash/nc-news-fe'>
         <AiFillGithub /> View on GitHub
       </a>

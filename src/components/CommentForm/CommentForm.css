@@ -1,7 +1,6 @@
 #addComment {
   background-color: var(--ctp-mocha-surface0);
   padding: 1rem;
-  border-radius: 0.5rem;
   z-index: 0;
   display: flex;
   flex-direction: column;
