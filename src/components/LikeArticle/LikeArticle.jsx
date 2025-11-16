@@ -16,15 +16,15 @@ const LikeArticle = ({ votes, updateArticleVotes, voteError }) => {
   return (
     <>
       <div id='likeArticle'>
+        <span>
+          {votes} like{votes !== 1 && 's'}
+        </span>
         <button
           onClick={() => handleUpdateVotes(1)}
           disabled={touched}
           className={likeTouched && !voteError ? 'likeTouched' : ''}>
           {likeTouched ? <FaThumbsUp /> : <FaRegThumbsUp />}
         </button>
-        <span>
-          {votes} like{votes !== 1 && 's'}
-        </span>
         <button
           onClick={() => handleUpdateVotes(-1)}
           disabled={touched}
