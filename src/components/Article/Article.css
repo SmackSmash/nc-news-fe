@@ -1,6 +1,7 @@
 #articleContainer {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   border-left: solid 1px var(--ctp-mocha-surface0);
   border-right: solid 1px var(--ctp-mocha-surface0);
   padding: 2rem 0;
@@ -55,8 +56,17 @@
     border: none;
     padding: 2rem 0;
     #article {
+      h1 {
+        padding: 0;
+      }
       #articleImgContainer {
         border: none;
+      }
+      #articleMeta {
+        padding: 1rem 0 0;
+      }
+      p {
+        padding: 0;
       }
     }
   }
@@ -67,6 +77,7 @@
       h1 {
         font-size: 1.5rem;
         line-height: 2rem;
+        font-weight: 200;
       }
     }
   }

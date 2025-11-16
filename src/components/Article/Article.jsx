@@ -40,9 +40,19 @@ const Article = () => {
     });
   };
 
-  if (isLoading) return <Loading>Loading article...</Loading>;
+  if (isLoading)
+    return (
+      <div id='articleContainer'>
+        <Loading>Loading article...</Loading>
+      </div>
+    );
 
-  if (error) return <Error>{error.message}</Error>;
+  if (error)
+    return (
+      <div id='articleContainer'>
+        <Error>{error.message}</Error>
+      </div>
+    );
 
   if (optimisticData && optimisticData.article) {
     const { article_img_url, author, body, created_at, title, topic, votes } = optimisticData.article;

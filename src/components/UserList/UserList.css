@@ -3,15 +3,32 @@
   flex-direction: column;
   gap: 2rem;
   flex-grow: 1;
+  border-left: solid 1px var(--ctp-mocha-surface0);
+  border-right: solid 1px var(--ctp-mocha-surface0);
+  padding: 2rem 0;
   h1 {
     font-size: 1.5rem;
-    font-weight: 600;
+    padding: 0 1rem 1rem;
+    border-bottom: solid 1px var(--ctp-mocha-surface0);
+    font-weight: 200;
   }
 
   #userGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #userList {
+    border: none;
+    h1 {
+      padding: 0 0 1rem;
+    }
+    #userGrid {
+      padding: 0;
+    }
   }
 }
 @media screen and (max-width: 650px) {

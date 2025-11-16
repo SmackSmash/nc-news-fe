@@ -1,7 +1,7 @@
 .userCard {
   background-color: var(--ctp-mocha-crust);
   padding: 2rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 
   .userImage {
     width: 100px;

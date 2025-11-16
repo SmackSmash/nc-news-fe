@@ -57,3 +57,8 @@
     padding: 0.25rem 0;
   }
 }
+@media screen and (max-width: 1200px) {
+  #addComment {
+    padding: 1rem 0;
+  }
+}

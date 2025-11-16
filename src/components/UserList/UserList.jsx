@@ -7,9 +7,19 @@ import './UserList.css';
 const UserList = () => {
   const { error, isLoading, data } = useQuery('https://northcoders-news-be-f4oe.onrender.com/api/users');
 
-  if (isLoading) return <Loading>Loading users...</Loading>;
+  if (isLoading)
+    return (
+      <section id='userList'>
+        <Loading>Loading users...</Loading>
+      </section>
+    );
 
-  if (error) return <Error>{error.message}</Error>;
+  if (error)
+    return (
+      <section id='userList'>
+        <Error>{error.message}</Error>
+      </section>
+    );
 
   if (data) {
     return (

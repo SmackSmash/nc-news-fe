@@ -18,7 +18,7 @@ const NavBar = ({ topicData }) => {
           <RiCloseLargeFill />
         </button>
         <NavLink onClick={() => setIsMenuOpen(false)} to='/'>
-          Articles
+          All Articles
         </NavLink>
         {topicData &&
           topicData.topics.map(({ slug }) => (
