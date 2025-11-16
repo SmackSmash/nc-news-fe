@@ -1,11 +1,9 @@
 .articleCard {
   display: flex;
   overflow: hidden;
-  border-bottom: solid 1px var(--ctp-mocha-surface0);
+  border-top: solid 1px var(--ctp-mocha-surface0);
+  padding: 0 1rem;
 
-  &:last-child {
-    border: none;
-  }
   .articleCardVoter {
     min-width: 50px;
     background-color: var(--ctp-mocha-base);
@@ -57,6 +55,11 @@
         align-items: center;
       }
     }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .articleCard {
+    padding: 0;
   }
 }
 @media screen and (max-width: 650px) {

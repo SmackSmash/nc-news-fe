@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 import Error from '../Error/Error';
 import Loading from '../Loading/Loading';
 import './SideBar.css';
@@ -37,14 +37,14 @@ const SideBar = ({ error, isLoading, data }) => {
       <aside id='sideBar'>
         <h2>Topics</h2>
         {data.topics.map(topic => (
-          <Link
+          <NavLink
             onMouseEnter={() => handleMouseEnter(topic.description)}
             onMouseLeave={() => handleMouseLeave(topic.description)}
             to={`/topic/${topic.slug}`}
             key={topic.slug}
             className='sideBarLink'>
             <span>{topic.slug}</span>
-          </Link>
+          </NavLink>
         ))}
         {showInfo && <p>{info}</p>}
       </aside>
