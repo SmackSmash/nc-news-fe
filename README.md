@@ -6,6 +6,8 @@ A react based front end consuming the [NC News API](https://github.com/SmackSmas
 
 ## Installation
 
+This app was built with Node version v22.19.0. It is recommended that you have this version or higher installed before cloning this repo.
+
 Using npm:
 
 ```terminal
