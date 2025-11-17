@@ -22,6 +22,7 @@ const Article = () => {
   const updateArticleVotes = num => {
     const updatedArticle = structuredClone(data);
     updatedArticle.article.votes += num;
+
     startTransition(async () => {
       setOptimisticData(updatedArticle);
       try {
